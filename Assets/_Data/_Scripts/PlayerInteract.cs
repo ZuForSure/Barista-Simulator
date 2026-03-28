@@ -19,13 +19,11 @@ public class PlayerInteract : MonoBehaviour
         {
             if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out RaycastHit hit, this.range))
             {
-                if (hit.collider.GetComponentInParent<Door>() is Door door)
+                if (hit.collider.GetComponentInParent<IInteract>() is IInteract interactObj)
                 {
-                    door.Open();
-                    Debug.Log(door.transform.name);
+                    interactObj.Interact();
                 }
             }
-
         }
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class Door : MonoBehaviour, IInteract
 {
     [SerializeField] protected Animator animator;
 
@@ -8,7 +8,10 @@ public class Door : MonoBehaviour
     {
         this.animator = GetComponent<Animator>();
     }
-
+    public void Interact()
+    {
+        this.Open();
+    }
 
     public void Open()
     {
