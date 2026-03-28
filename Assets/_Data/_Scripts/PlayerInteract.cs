@@ -7,7 +7,6 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] protected Camera mainCam;
     [SerializeField] protected float range = 2f;
-    [SerializeField] protected Door door;
 
     void Update()
     {
@@ -18,14 +17,15 @@ public class PlayerInteract : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Ray ray = new(Camera.main.transform.position, Camera.main.transform.forward);
-
-            if (Physics.Raycast(ray, out RaycastHit hit, this.range))
+            if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out RaycastHit hit, this.range))
             {
-                door.Open();
+                if (hit.collider.GetComponentInParent<Door>() is Door door)
+                {
+                    door.Open();
+                    Debug.Log(door.transform.name);
+                }
             }
 
-            Debug.DrawRay(ray.origin, ray.direction * range, Color.red, range);
         }
     }
 }
