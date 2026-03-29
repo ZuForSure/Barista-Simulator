@@ -122,6 +122,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &28948607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 28948608}
+  m_Layer: 0
+  m_Name: Drop Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &28948608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28948607}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1074734546}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &315853335
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +364,7 @@ GameObject:
   - component: {fileID: 1074734545}
   - component: {fileID: 1074734544}
   - component: {fileID: 1074734543}
+  - component: {fileID: 1074734547}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -423,9 +455,23 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.75, z: -4.392}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 28948608}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1074734547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074734542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90fbef8287fdbb4284dcae68b47465b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placePoint: {fileID: 28948608}
 --- !u!1001 &4765485611141752325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -562,7 +608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6824686505740699319, guid: c185cebdc4ca32f47a837084addafdd0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.31
+      value: -3.04
       objectReference: {fileID: 0}
     - target: {fileID: 6824686505740699319, guid: c185cebdc4ca32f47a837084addafdd0, type: 3}
       propertyPath: m_LocalRotation.w

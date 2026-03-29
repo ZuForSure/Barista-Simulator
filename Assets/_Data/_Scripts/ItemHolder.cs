@@ -6,6 +6,7 @@ public class ItemHolder : MonoBehaviour
 
     [SerializeField] private Transform holdPoint;
     private Item currentItem;
+    public bool IsHolding() => currentItem != null;
 
     private void Awake()
     {
@@ -29,5 +30,20 @@ public class ItemHolder : MonoBehaviour
         item.transform.SetParent(holdPoint);
         item.transform.localPosition = Vector3.zero;
         item.transform.localRotation = Quaternion.identity;
+    }
+
+    public void TryDrop(RaycastHit hit)
+    {
+        if (currentItem == null) return;
+
+        if (hit.collider.TryGetComponent<IDropZone>(out var dropZone))
+        {
+            dropZone.PlaceItem(currentItem);
+            currentItem = null;
+        }
+        else
+        {
+            Debug.Log("CANT DROP HERE");
+        }
     }
 }

@@ -16,9 +16,19 @@ public class PlayerInteract : MonoBehaviour
         {
             if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out RaycastHit hit, this.range))
             {
-                if (hit.collider.GetComponentInParent<IInteract>() is IInteract interactObj)
+                //if (hit.collider.GetComponentInParent<IInteract>() is IInteract interactObj)
+                //{
+                //    interactObj.Interact();
+                //}
+
+                if (ItemHolder.Instance.IsHolding())
                 {
-                    interactObj.Interact();
+                    ItemHolder.Instance.TryDrop(hit);
+                }
+                else
+                {
+                    var interactObj = hit.collider.GetComponentInParent<IInteract>();
+                    interactObj?.Interact();
                 }
             }
         }
