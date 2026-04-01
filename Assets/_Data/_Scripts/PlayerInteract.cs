@@ -47,7 +47,6 @@ public class PlayerInteract : MonoBehaviour
             if (ItemHolder.Instance.IsHolding())
             {
                 ItemHolder.Instance.TryDrop(hit);
-                this.currentSyrup = null;
             }
             else
             {
