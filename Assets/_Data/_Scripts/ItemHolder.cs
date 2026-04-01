@@ -7,6 +7,7 @@ public class ItemHolder : MonoBehaviour
     [SerializeField] private Transform holdPoint;
     private Item currentItem;
     public bool IsHolding() => currentItem != null;
+    public Item CurrentItem => currentItem;
 
     private void Awake()
     {
