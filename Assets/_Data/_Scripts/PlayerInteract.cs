@@ -2,13 +2,16 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
+    [SerializeField] LayerMask cupLayer;
     [SerializeField] protected Camera mainCam;
     [SerializeField] protected SyrupBox currentSyrup;
+    [SerializeField] protected Cup currentCup;
     [SerializeField] protected float range = 2f;
 
     void Update()
     {
         this.Interact();
+        this.DetectCup();
     }
 
     protected void Interact()
@@ -24,6 +27,19 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
+    protected void DetectCup()
+    {
+        currentCup = null;
+
+        if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out RaycastHit hit, range, cupLayer))
+        {
+            if (hit.collider.TryGetComponent(out Cup cup))
+            {
+                currentCup = cup;
+            }
+        }
+    }
+
     protected void PickUpItem()
     {
         if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out RaycastHit hit, this.range))
@@ -31,6 +47,7 @@ public class PlayerInteract : MonoBehaviour
             if (ItemHolder.Instance.IsHolding())
             {
                 ItemHolder.Instance.TryDrop(hit);
+                this.currentSyrup = null;
             }
             else
             {
@@ -49,7 +66,7 @@ public class PlayerInteract : MonoBehaviour
 
     protected void PouringIngredientIntoCup()
     {
-        if (ItemHolder.Instance.IsHolding() && ItemHolder.Instance.CurrentItem.gameObject.CompareTag("Syrup"))
+        if (ItemHolder.Instance.IsHolding() && ItemHolder.Instance.CurrentItem.gameObject.CompareTag("Syrup") && currentCup != null)
         {
             this.currentSyrup.Pouring();
         }

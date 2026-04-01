@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 6088566696741536802}
   - component: {fileID: 8700842512646411505}
   - component: {fileID: 8700842512646411506}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1102,6 +1102,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 659500773584753542, guid: 07776e7a6f8e6da4fb6b1167c3066d3c, type: 3}
+      propertyPath: cupLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 1953447932956056536, guid: 07776e7a6f8e6da4fb6b1167c3066d3c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
