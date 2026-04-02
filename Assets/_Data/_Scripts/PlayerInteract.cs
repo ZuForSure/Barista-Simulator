@@ -4,7 +4,7 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] LayerMask cupLayer;
     [SerializeField] protected Camera mainCam;
-    [SerializeField] protected SyrupBox currentSyrup;
+    [SerializeField] protected IngredientBox currentSyrup;
     [SerializeField] protected Cup currentCup;
     [SerializeField] protected float range = 2f;
 
@@ -55,7 +55,7 @@ public class PlayerInteract : MonoBehaviour
                 if (hit.collider.gameObject.CompareTag("Syrup"))
                 {
                     GameObject syrupBox = hit.collider.gameObject;
-                    this.currentSyrup = syrupBox.GetComponent<SyrupBox>();
+                    this.currentSyrup = syrupBox.GetComponent<IngredientBox>();
                 }
 
                 interactObj?.Interact();
@@ -67,7 +67,7 @@ public class PlayerInteract : MonoBehaviour
     {
         if (ItemHolder.Instance.IsHolding() && ItemHolder.Instance.CurrentItem.gameObject.CompareTag("Syrup") && currentCup != null)
         {
-            this.currentSyrup.Pouring();
+            this.currentSyrup.PouringSyrup();
         }
     }
 }
