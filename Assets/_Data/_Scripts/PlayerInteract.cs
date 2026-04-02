@@ -8,6 +8,9 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] protected Cup currentCup;
     [SerializeField] protected float range = 2f;
 
+    //Bien test
+    public Recipe recipe;
+
     void Update()
     {
         this.Interact();
@@ -24,6 +27,25 @@ public class PlayerInteract : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
             this.PouringIngredientIntoCup();
+        }
+
+        this.TestCheckRecipe();
+    }
+
+    //Ham nay de test chu chua done
+    public void TestCheckRecipe()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (this.currentCup.IsMatch(recipe.ingredients, currentCup.CurrentIngredients)) 
+            { 
+                Debug.Log("CHUC MUNG MAY DA LAM RA LY BAC XIU NCC");
+            }
+            else
+            {
+                Debug.Log("SAI CONG THUC ROI THANG NGU");
+            }
+
         }
     }
 

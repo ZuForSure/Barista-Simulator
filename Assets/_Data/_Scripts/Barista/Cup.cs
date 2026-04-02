@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Cup : MonoBehaviour
 {
-    public List<IngredientAmount> currentIngredients = new();
+    [SerializeField] protected List<IngredientAmount> currentIngredients;
+    public List<IngredientAmount> CurrentIngredients => currentIngredients;
 
     public void AddIngredient(Ingredient ingredient, float amount)
     {
@@ -25,7 +26,7 @@ public class Cup : MonoBehaviour
         Debug.Log($"Added {amount}ml of {ingredient.name}");
     }
 
-    bool IsMatch(List<IngredientAmount> recipe, List<IngredientAmount> currentInCup)
+    public bool IsMatch(List<IngredientAmount> recipe, List<IngredientAmount> currentInCup)
     {
         foreach (var r in recipe)
         {

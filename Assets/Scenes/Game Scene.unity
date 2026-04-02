@@ -1252,6 +1252,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 659500773584753542, guid: 07776e7a6f8e6da4fb6b1167c3066d3c, type: 3}
+      propertyPath: recipe
+      value: 
+      objectReference: {fileID: 11400000, guid: e75c16520ab2ee04e829a1edf22b9c43, type: 2}
+    - target: {fileID: 659500773584753542, guid: 07776e7a6f8e6da4fb6b1167c3066d3c, type: 3}
       propertyPath: cupLayer.m_Bits
       value: 256
       objectReference: {fileID: 0}
