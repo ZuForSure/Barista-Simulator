@@ -19,12 +19,12 @@ public class PlayerInteract : MonoBehaviour
 
     protected void Interact()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (InputManager.Instance.IsLeftClick)
         {
             this.PickUpItem();
         }
 
-        if (Input.GetKey(KeyCode.E))
+        if (InputManager.Instance.IsPouring)
         {
             this.PouringIngredientIntoCup();
         }
@@ -43,7 +43,7 @@ public class PlayerInteract : MonoBehaviour
             }
             else
             {
-                Debug.Log("SAI CONG THUC ROI THANG NGU");
+                Debug.LogWarning("SAI CONG THUC ROI THANG NGU");
             }
 
         }

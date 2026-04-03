@@ -165,10 +165,10 @@ namespace ElmanGameDevTools.PlayerSystem
         private void HandleMovement()
         {
             // Reverted to Input.GetAxis for smooth built-in interpolation
-            Vector3 moveInput = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
+            Vector3 moveInput = transform.right * InputManager.Instance.HorizontalInput + transform.forward * InputManager.Instance.VerticalInput;
             if (moveInput.magnitude > 1f) moveInput.Normalize();
 
-            if (Input.GetButtonDown("Jump") && _isGrounded && !_isCrouching)
+            if (InputManager.Instance.IsJump && _isGrounded && !_isCrouching)
             {
                 _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
                 _hasJumped = true;
@@ -229,7 +229,7 @@ namespace ElmanGameDevTools.PlayerSystem
         {
             if (!enableCameraTilt) { _currentTilt = 0; return; }
 
-            float keyboardTilt = -Input.GetAxis("Horizontal") * tiltAmount;
+            float keyboardTilt = -InputManager.Instance.HorizontalInput * tiltAmount;
             float mouseTilt = -_smoothInputX * turnTiltAmount;
             float targetTiltTotal = keyboardTilt + mouseTilt;
 
@@ -250,7 +250,7 @@ namespace ElmanGameDevTools.PlayerSystem
 
         private void HandleHeadBob()
         {
-            float moveMag = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).magnitude;
+            float moveMag = new Vector2(InputManager.Instance.HorizontalInput, InputManager.Instance.VerticalInput).magnitude;
             float currentCamH = _cameraBaseHeight * (controller.height / _originalHeight);
 
             if (!_isGrounded || moveMag <= 0.1f)
