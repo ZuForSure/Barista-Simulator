@@ -19,7 +19,7 @@ public class FlashLight : MonoBehaviour
 
     private void ToggleFlashlight()
     {
-        if (!Input.GetKeyDown(KeyCode.F)) return;
+        if (!InputManager.Instance.IsFlashLight) return;
 
         this.isOn = !isOn;
         this.spotLight.gameObject.SetActive(isOn);
