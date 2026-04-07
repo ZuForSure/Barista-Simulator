@@ -6,7 +6,7 @@ public class DropZone : MonoBehaviour,IDropZone
 
     void Awake()
     {
-        placePoint = GetComponentInChildren<Transform>();
+        //placePoint = transform.GetComponentInChildren<Transform>();
     }
 
     public void PlaceItem(Item item)
