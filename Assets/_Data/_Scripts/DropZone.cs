@@ -3,18 +3,18 @@ using UnityEngine;
 public class DropZone : MonoBehaviour,IDropZone
 {
     [SerializeField] private Transform placePoint;
-
-    void Awake()
-    {
-        //placePoint = transform.GetComponentInChildren<Transform>();
-    }
+    [SerializeField] private Item currentItem;
+    public bool IsOccupied() => currentItem != null;
 
     public void PlaceItem(Item item)
     {
-        item.transform.SetParent(null);
+        if (currentItem != null) return;
+        currentItem = item;
 
+        item.transform.SetParent(null);
         item.transform.position = placePoint.position;
         item.transform.rotation = placePoint.rotation;
+        item.SetDropZone(this);
 
         if (item.TryGetComponent<Rigidbody>(out var rb))
         {
@@ -25,5 +25,10 @@ public class DropZone : MonoBehaviour,IDropZone
         {
             col.enabled = true;
         }
+    }
+
+    public void RemoveItem()
+    {
+        currentItem = null;
     }
 }

@@ -39,6 +39,12 @@ public class ItemHolder : MonoBehaviour
 
         if (hit.collider.TryGetComponent<IDropZone>(out var dropZone))
         {
+            if (dropZone is DropZone dz && dz.IsOccupied())
+            {
+                Debug.Log("This place already has an item");
+                return;
+            }
+
             dropZone.PlaceItem(currentItem);
             currentItem = null;
         }
