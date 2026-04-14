@@ -9,7 +9,7 @@ public class Item : MonoBehaviour,IInteract
         this.PickUpItem();
     }
 
-    public void PickUpItem()
+    public virtual void PickUpItem()
     {
         if (currentZone != null)
         {
