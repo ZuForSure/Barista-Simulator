@@ -7,7 +7,7 @@ public class Door : MonoBehaviour, IInteract
 
     private void Awake()
     {
-        this.animator = GetComponent<Animator>();
+        //this.animator = GetComponent<Animator>();
     }
     public void Interact()
     {
