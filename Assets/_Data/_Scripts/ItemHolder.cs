@@ -4,7 +4,7 @@ public class ItemHolder : MonoBehaviour
 {
     public static ItemHolder Instance;
 
-    [SerializeField] private Transform holdPoint;
+    [SerializeField] private Transform holdPointSmall, holdPointBig;
     private Item currentItem;
     public bool IsHolding() => currentItem != null;
     public Item CurrentItem => currentItem;
@@ -28,7 +28,9 @@ public class ItemHolder : MonoBehaviour
             col.enabled = false;
         }
 
-        item.transform.SetParent(holdPoint);
+        Transform targetPoint = item.itemType == ItemType.Big ? holdPointBig : holdPointSmall;
+
+        item.transform.SetParent(targetPoint);
         item.transform.localPosition = Vector3.zero;
         item.transform.localRotation = Quaternion.identity;
     }

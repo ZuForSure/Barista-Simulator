@@ -1,7 +1,13 @@
 using UnityEngine;
+public enum ItemType
+{
+    Small = 0,
+    Big = 1,
+}
 
 public class Item : MonoBehaviour,IInteract
 {
+    public ItemType itemType;
     [SerializeField] private DropZone currentZone;
 
     public void Interact()

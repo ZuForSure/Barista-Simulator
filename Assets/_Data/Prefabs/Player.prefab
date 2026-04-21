@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &35939688318278011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5809873461774261217}
+  m_Layer: 0
+  m_Name: Hold Point Big
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5809873461774261217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35939688318278011}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.3, z: 1.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4168010879208590539}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1258674266011534280
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +62,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 638058093447306877}
+  - {fileID: 4168010879208590539}
   - {fileID: 8302968883901965701}
   - {fileID: 626575804536507722}
   - {fileID: 4283007044023646064}
@@ -296,7 +327,7 @@ MonoBehaviour:
   mainCam: {fileID: 7930274437847393759}
   currentSyrup: {fileID: 0}
   currentCup: {fileID: 0}
-  range: 2
+  range: 3
   recipe: {fileID: 11400000, guid: e75c16520ab2ee04e829a1edf22b9c43, type: 2}
 --- !u!1 &3011601156745351206
 GameObject:
@@ -665,6 +696,54 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4136600559629600013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4168010879208590539}
+  - component: {fileID: 4288477386156745827}
+  m_Layer: 0
+  m_Name: Item Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4168010879208590539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4136600559629600013}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 638058093447306877}
+  - {fileID: 5809873461774261217}
+  m_Father: {fileID: 4262366768770187380}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4288477386156745827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4136600559629600013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a46cde56c0449b4fbf64716a881e14d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdPointSmall: {fileID: 638058093447306877}
+  holdPointBig: {fileID: 5809873461774261217}
 --- !u!1 &4623121683669367326
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,9 +852,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 638058093447306877}
-  - component: {fileID: 4008652276464377262}
   m_Layer: 0
-  m_Name: Hold Point
+  m_Name: Hold Point Small
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -790,25 +868,12 @@ Transform:
   m_GameObject: {fileID: 5579364454573034384}
   serializedVersion: 2
   m_LocalRotation: {x: -0.02351587, y: 0.4733901, z: 0.1402263, w: 0.8693017}
-  m_LocalPosition: {x: 0.9, y: -0.6, z: 1}
+  m_LocalPosition: {x: 0.9, y: -0.5999999, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4262366768770187380}
+  m_Father: {fileID: 4168010879208590539}
   m_LocalEulerAnglesHint: {x: -10, y: 56, z: 13}
---- !u!114 &4008652276464377262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5579364454573034384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a46cde56c0449b4fbf64716a881e14d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holdPoint: {fileID: 638058093447306877}
 --- !u!1 &6338693715965179310
 GameObject:
   m_ObjectHideFlags: 0
