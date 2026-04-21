@@ -1324,10 +1324,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8106778146916474121, guid: c2b18f43cb8b1004a945898cbdd2a1f8, type: 3}
-      propertyPath: itemType
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1490,10 +1486,6 @@ PrefabInstance:
     - target: {fileID: 2405505428607759875, guid: 54805062be24f294286ed5f60e9f8608, type: 3}
       propertyPath: m_Name
       value: Camp Table
-      objectReference: {fileID: 0}
-    - target: {fileID: 5187505278337394267, guid: 54805062be24f294286ed5f60e9f8608, type: 3}
-      propertyPath: itemType
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8524576585281515023, guid: 54805062be24f294286ed5f60e9f8608, type: 3}
       propertyPath: m_LocalPosition.x
