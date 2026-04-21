@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5809873461774261217}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hold Point Big
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4262366768770187380}
   - component: {fileID: 7930274437847393759}
   - component: {fileID: 4275233049395852144}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8302968883901965701}
   - component: {fileID: 2289835587824839333}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flash Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 5501627431105741156}
   - component: {fileID: 8460653444340444673}
   - component: {fileID: 3235652720589913240}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6410867945135825095}
   - component: {fileID: 659500773584753542}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player Interact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ MonoBehaviour:
   mainCam: {fileID: 7930274437847393759}
   currentSyrup: {fileID: 0}
   currentCup: {fileID: 0}
-  range: 3
+  range: 2.5
   recipe: {fileID: 11400000, guid: e75c16520ab2ee04e829a1edf22b9c43, type: 2}
 --- !u!1 &3011601156745351206
 GameObject:
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 3900957617411167386}
   - component: {fileID: 1410722404651343933}
   - component: {fileID: 6632908849026997547}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player_Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 5189287937475859718}
   - component: {fileID: 6415289800278672656}
   - component: {fileID: 346634742343943180}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4168010879208590539}
   - component: {fileID: 4288477386156745827}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Item Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -753,7 +753,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4014863784696069026}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CrouthCheck
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -786,7 +786,7 @@ GameObject:
   - component: {fileID: 4283007044023646064}
   - component: {fileID: 4845781564218790193}
   - component: {fileID: 2579770627885293897}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +852,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 638058093447306877}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hold Point Small
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -884,7 +884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 816683884382806692}
   - component: {fileID: 4216311350010080759}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -930,7 +930,7 @@ GameObject:
   - component: {fileID: 2272239497492634865}
   - component: {fileID: 6327938490344223004}
   - component: {fileID: 7944521979912674059}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AssetStore3dModels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1012,7 +1012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8123800783955249333}
   - component: {fileID: 1377224668185122790}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1105,7 +1105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1953447932956056536}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1140,7 +1140,7 @@ GameObject:
   - component: {fileID: 383029637191462438}
   - component: {fileID: 2186717905927270678}
   - component: {fileID: 418624799452184776}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Glasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}

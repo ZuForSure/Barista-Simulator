@@ -6,7 +6,7 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] protected Camera mainCam;
     [SerializeField] protected IngredientBox currentSyrup;
     [SerializeField] protected Cup currentCup;
-    [SerializeField] protected float range = 3f;
+    [SerializeField] protected float range = 2f;
 
     //Bien test
     public Recipe recipe;
