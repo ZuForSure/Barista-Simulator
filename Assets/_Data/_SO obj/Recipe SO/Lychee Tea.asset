@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262acf6aa1c96a44bb41dae286406027, type: 3}
+  m_Name: Lychee Tea
+  m_EditorClassIdentifier: 
+  recipeID: 3
+  recipeName: Lychee Tea
+  ingredients:
+  - ingredient: {fileID: 11400000, guid: a311834c2457c574e8ad0d3fd2633948, type: 2}
+    amount: 125
+  - ingredient: {fileID: 11400000, guid: 89cac0ec791faca448b2eaba3d08cdeb, type: 2}
+    amount: 30
+  - ingredient: {fileID: 11400000, guid: 4df13f1e0e44e7b409afdb17e72eb723, type: 2}
+    amount: 20
+  - ingredient: {fileID: 11400000, guid: 9d36bbf06c5b7e447bf9b1fae8b81903, type: 2}
+    amount: 1
+  - ingredient: {fileID: 11400000, guid: 330479749fc2d4c4899e4b07cf438abf, type: 2}
+    amount: 3
