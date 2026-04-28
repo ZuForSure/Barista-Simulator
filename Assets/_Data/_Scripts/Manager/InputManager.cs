@@ -8,11 +8,12 @@ public class InputManager : MonoBehaviour
     public static InputManager Instance => instance;
 
     [SerializeField] protected float horizontal, vertical;
-    [SerializeField] protected bool isLeftClick, isPouring, isJump, isFlashLight;
+    [SerializeField] protected bool isLeftClick, isPouring, isAddTopping, isJump, isFlashLight;
     public float HorizontalInput => horizontal;
     public float VerticalInput => vertical;
     public bool IsLeftClick => isLeftClick;
     public bool IsPouring => isPouring;
+    public bool IsAddTopping => isAddTopping;
     public bool IsJump => isJump;
     public bool IsFlashLight => isFlashLight;
 
@@ -27,6 +28,7 @@ public class InputManager : MonoBehaviour
         this.GetMovementInput();
         this.GetLeftClickInput();
         this.GetPouringInput();
+        this.GetAddToppingInput();
         this.GetJumpInput();
         this.GetFlashLightInput();
     }
@@ -45,6 +47,11 @@ public class InputManager : MonoBehaviour
     protected void GetPouringInput()
     {
         this.isPouring = Input.GetKey(KeyCode.E);
+    }
+
+    protected void GetAddToppingInput()
+    {
+        this.isAddTopping = Input.GetKeyDown(KeyCode.E);
     }
 
     protected void GetJumpInput()

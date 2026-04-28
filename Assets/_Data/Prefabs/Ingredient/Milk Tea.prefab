@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423a0fd76932979488311021467239a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 2
   currentZone: {fileID: 0}
   ingredient: {fileID: 11400000, guid: d7f658c0101555c4588aa1eaad3386d3, type: 2}
   amoutPerSec: 20

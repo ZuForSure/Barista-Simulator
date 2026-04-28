@@ -4,7 +4,7 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] LayerMask cupLayer;
     [SerializeField] protected Camera mainCam;
-    [SerializeField] protected HoldAbleIngredient currentSyrup;
+    [SerializeField] protected HoldAbleIngredient currentIngredient;
     [SerializeField] protected Cup currentCup;
     [SerializeField] protected float range = 2f;
 
@@ -26,7 +26,12 @@ public class PlayerInteract : MonoBehaviour
 
         if (InputManager.Instance.IsPouring)
         {
-            this.PouringIngredientIntoCup();
+            currentIngredient?.Use(currentCup, true);
+        }
+
+        if (InputManager.Instance.IsAddTopping)
+        {
+            currentIngredient?.Use(currentCup, false);
         }
 
         this.TestCheckRecipe();
@@ -73,29 +78,14 @@ public class PlayerInteract : MonoBehaviour
             else
             {
                 var interactObj = hit.collider.GetComponentInParent<IInteract>();
-
-                //if (hit.collider.gameObject.CompareTag("Syrup"))
-                //{
-                //    GameObject syrupBox = hit.collider.gameObject;
-                //    this.currentSyrup = syrupBox.GetComponent<IngredientBox>();
-                //}
-
                 var syrup = hit.collider.GetComponent<HoldAbleIngredient>();
                 if (syrup != null)
                 {
-                    currentSyrup = syrup;
+                    currentIngredient = syrup;
                 }
 
                 interactObj?.Interact();
             }
-        }
-    }
-
-    protected void PouringIngredientIntoCup()
-    {
-        if (ItemHolder.Instance.IsHolding() && ItemHolder.Instance.CurrentItem.gameObject.CompareTag("Syrup") && currentCup != null)
-        {
-            this.currentSyrup.PouringSyrup();
         }
     }
 }

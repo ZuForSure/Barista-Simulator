@@ -3,10 +3,12 @@ public enum ItemType
 {
     Small = 0,
     Big = 1,
+    Ingredient = 2,
 }
 
 public class Item : MonoBehaviour,IInteract
 {
+    [Header("Item")]
     public ItemType itemType;
     [SerializeField] private DropZone currentZone;
 
