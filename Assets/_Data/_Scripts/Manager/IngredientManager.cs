@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class IngredientManager : MonoBehaviour
 {
-    [SerializeField] protected List<IngredientBox> ingredients;
+    [SerializeField] protected List<HoldAbleIngredient> ingredients;
 
     private void Reset()
     {
@@ -16,7 +16,7 @@ public class IngredientManager : MonoBehaviour
 
         foreach (Transform child in transform)
         {
-            this.ingredients.Add(child.gameObject.GetComponent<IngredientBox>());
+            this.ingredients.Add(child.gameObject.GetComponent<HoldAbleIngredient>());
         }
 
         Debug.Log(transform.name + ": LoadIngredientBox", gameObject);

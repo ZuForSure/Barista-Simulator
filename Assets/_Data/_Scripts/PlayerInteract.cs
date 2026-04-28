@@ -4,7 +4,7 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] LayerMask cupLayer;
     [SerializeField] protected Camera mainCam;
-    [SerializeField] protected IngredientBox currentSyrup;
+    [SerializeField] protected HoldAbleIngredient currentSyrup;
     [SerializeField] protected Cup currentCup;
     [SerializeField] protected float range = 2f;
 
@@ -74,10 +74,16 @@ public class PlayerInteract : MonoBehaviour
             {
                 var interactObj = hit.collider.GetComponentInParent<IInteract>();
 
-                if (hit.collider.gameObject.CompareTag("Syrup"))
+                //if (hit.collider.gameObject.CompareTag("Syrup"))
+                //{
+                //    GameObject syrupBox = hit.collider.gameObject;
+                //    this.currentSyrup = syrupBox.GetComponent<IngredientBox>();
+                //}
+
+                var syrup = hit.collider.GetComponent<HoldAbleIngredient>();
+                if (syrup != null)
                 {
-                    GameObject syrupBox = hit.collider.gameObject;
-                    this.currentSyrup = syrupBox.GetComponent<IngredientBox>();
+                    currentSyrup = syrup;
                 }
 
                 interactObj?.Interact();
