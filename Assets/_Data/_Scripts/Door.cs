@@ -4,11 +4,6 @@ public class Door : MonoBehaviour, IInteract
 {
     [SerializeField] protected Animator animator;
     [SerializeField] protected bool isRequiredKey, isOpen;
-
-    private void Awake()
-    {
-        //this.animator = GetComponent<Animator>();
-    }
     public void Interact()
     {
         if (isOpen) return;

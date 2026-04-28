@@ -78,14 +78,36 @@ public class PlayerInteract : MonoBehaviour
             else
             {
                 var interactObj = hit.collider.GetComponentInParent<IInteract>();
-                var syrup = hit.collider.GetComponent<HoldAbleIngredient>();
-                if (syrup != null)
-                {
-                    currentIngredient = syrup;
-                }
-
                 interactObj?.Interact();
+
+                //var syrup = hit.collider.GetComponent<HoldAbleIngredient>();
+                //if (syrup != null)
+                //{
+                //    currentIngredient = syrup;
+                //}
             }
         }
+    }
+
+    private void OnEnable()
+    {
+        ItemHolder.OnHoldIngredient += SetCurrentIngredient;
+        ItemHolder.OnDropItem += ClearIngredient;
+    }
+
+    private void OnDisable()
+    {
+        ItemHolder.OnHoldIngredient -= SetCurrentIngredient;
+        ItemHolder.OnDropItem -= ClearIngredient;
+    }
+
+    public void SetCurrentIngredient(HoldAbleIngredient ingredient)
+    {
+        currentIngredient = ingredient;
+    }
+
+    private void ClearIngredient()
+    {
+        currentIngredient = null;
     }
 }

@@ -289,38 +289,6 @@ MonoBehaviour:
   - {fileID: 1046591023611839949}
   - {fileID: 74329081476345838}
   - {fileID: 3178178360115935795}
---- !u!1 &185700586
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 185700587}
-  m_Layer: 0
-  m_Name: Kumquat
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &185700587
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 185700586}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.806, y: 1, z: -3.375}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 727277322}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &188354663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -835,68 +803,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5331640255251323954, guid: f963ce99534566546bef641ab50a6023, type: 3}
   m_PrefabInstance: {fileID: 726220990}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &727277321
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 185700587}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: b98813bcc86ae8a46b3e7c89129f3bf9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b98813bcc86ae8a46b3e7c89129f3bf9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b98813bcc86ae8a46b3e7c89129f3bf9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b98813bcc86ae8a46b3e7c89129f3bf9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b98813bcc86ae8a46b3e7c89129f3bf9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.00000003774895
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b98813bcc86ae8a46b3e7c89129f3bf9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b98813bcc86ae8a46b3e7c89129f3bf9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b98813bcc86ae8a46b3e7c89129f3bf9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b98813bcc86ae8a46b3e7c89129f3bf9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b98813bcc86ae8a46b3e7c89129f3bf9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: b98813bcc86ae8a46b3e7c89129f3bf9, type: 3}
-      propertyPath: m_Name
-      value: A Kumquat
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b98813bcc86ae8a46b3e7c89129f3bf9, type: 3}
---- !u!4 &727277322 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b98813bcc86ae8a46b3e7c89129f3bf9, type: 3}
-  m_PrefabInstance: {fileID: 727277321}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &831178855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1370,6 +1276,7 @@ MonoBehaviour:
   vertical: 0
   isLeftClick: 0
   isPouring: 0
+  isAddTopping: 0
   isJump: 0
   isFlashLight: 0
 --- !u!1 &1322337053
@@ -3885,7 +3792,6 @@ SceneRoots:
   - {fileID: 1147580228}
   - {fileID: 36268835}
   - {fileID: 398692715}
-  - {fileID: 185700587}
   - {fileID: 8431489058248797049}
   - {fileID: 5733463196995978551}
   - {fileID: 3623495189370725339}

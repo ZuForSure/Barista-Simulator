@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
 public class ItemHolder : MonoBehaviour
 {
     public static ItemHolder Instance;
+    public static Action<HoldAbleIngredient> OnHoldIngredient;
+    public static Action OnDropItem;
 
     [SerializeField] private Transform holdPointSmall, holdPointBig;
     private Item currentItem;
@@ -17,6 +20,11 @@ public class ItemHolder : MonoBehaviour
     public void HoldItem(Item item)
     {
         currentItem = item;
+
+        if (item is HoldAbleIngredient ingredient)
+        {
+            OnHoldIngredient?.Invoke(ingredient);
+        }
 
         if (item.TryGetComponent<Rigidbody>(out var rb))
         {
@@ -49,10 +57,17 @@ public class ItemHolder : MonoBehaviour
 
             dropZone.PlaceItem(currentItem);
             currentItem = null;
+            OnDropItem?.Invoke();
         }
         else
         {
             Debug.Log("CANT DROP HERE");
         }
+    }
+
+    public void ForceClear()
+    {
+        currentItem = null;
+        OnDropItem?.Invoke();
     }
 }

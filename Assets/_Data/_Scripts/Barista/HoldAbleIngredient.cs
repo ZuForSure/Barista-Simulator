@@ -6,6 +6,7 @@ public class HoldAbleIngredient : Item
     [SerializeField] protected Ingredient ingredient;
     [SerializeField] protected float amoutPerSec = 20f;
     [SerializeField] protected Cup cup;
+    [SerializeField] private bool isConsumable = false;
 
     public void Use(Cup cup, bool isHolding)
     {
@@ -16,6 +17,17 @@ public class HoldAbleIngredient : Item
         else if (ingredient.Type == IngredientType.Topping && !isHolding)
         {
             cup.AddIngredient(ingredient, 1);
+
+            if (isConsumable)
+            {
+                Consume();
+            }
         }
+    }
+
+    protected void Consume()
+    {
+        ItemHolder.Instance.ForceClear();
+        Destroy(gameObject);
     }
 }
