@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2910942010317665151}
   - component: {fileID: 7279000188566165504}
   - component: {fileID: 787664481061336965}
-  - component: {fileID: 6897891789545358118}
+  - component: {fileID: 8568948592784386260}
   m_Layer: 0
   m_Name: Matcha Latte
   m_TagString: Untagged
@@ -83,7 +83,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6897891789545358118
+--- !u!114 &8568948592784386260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,11 +92,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 9002672366991747801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41cdc999054cc3d41a156e7ea2117aaa, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ebf1bd3c404d8b43aba16156f99a60b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
   currentZone: {fileID: 0}
+  recipe: {fileID: 11400000, guid: 15bee10954b9d1645944204f62bdf35d, type: 2}
 --- !u!1001 &8253181399007791222
 PrefabInstance:
   m_ObjectHideFlags: 0

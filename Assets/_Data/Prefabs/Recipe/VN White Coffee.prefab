@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7882750727878531037}
   - component: {fileID: 573061734621619760}
   - component: {fileID: 4763845209011137627}
-  - component: {fileID: 5765098775943499484}
+  - component: {fileID: -6343793438571677807}
   m_Layer: 0
   m_Name: VN White Coffee
   m_TagString: Untagged
@@ -83,7 +83,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.70673287, y: 1.01222, z: 0.70673305}
   m_Center: {x: 0.00000012772423, y: 0.50099754, z: 0.006109689}
---- !u!114 &5765098775943499484
+--- !u!114 &-6343793438571677807
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,11 +92,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7546478849054735639}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41cdc999054cc3d41a156e7ea2117aaa, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ebf1bd3c404d8b43aba16156f99a60b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
   currentZone: {fileID: 0}
+  recipe: {fileID: 11400000, guid: e75c16520ab2ee04e829a1edf22b9c43, type: 2}
 --- !u!1001 &808400211824737834
 PrefabInstance:
   m_ObjectHideFlags: 0

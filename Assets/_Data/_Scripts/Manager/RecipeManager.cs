@@ -3,7 +3,16 @@ using UnityEngine;
 
 public class RecipeManager : MonoBehaviour
 {
-    [SerializeField] protected List<GameObject> recipes;
+    protected static RecipeManager instance;
+    public static RecipeManager Instance => instance;
+
+    [SerializeField] protected List<HoldAbleRecipe> recipes;
+
+    private void Awake()
+    {
+        if (instance != null) Debug.LogWarning("Only 1 RecipeManager can exist");
+        RecipeManager.instance = this;
+    }
 
     private void Reset()
     {
@@ -16,9 +25,14 @@ public class RecipeManager : MonoBehaviour
 
         foreach (Transform child in transform)
         {
-            this.recipes.Add(child.gameObject);
+            this.recipes.Add(child.gameObject.GetComponent<HoldAbleRecipe>());
         }
 
         Debug.Log(transform.name + ": LoadRecipes", gameObject);
+    }
+
+    public void SpawnRecipe()
+    {
+
     }
 }

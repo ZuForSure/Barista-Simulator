@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5014939710665112332}
   - component: {fileID: 1331336974150955021}
   - component: {fileID: 2066227415825287073}
-  - component: {fileID: 8469757799468471676}
+  - component: {fileID: -7104400627541143325}
   m_Layer: 0
   m_Name: Original Milk Tea
   m_TagString: Untagged
@@ -83,7 +83,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8469757799468471676
+--- !u!114 &-7104400627541143325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,11 +92,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5047846836119581436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41cdc999054cc3d41a156e7ea2117aaa, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ebf1bd3c404d8b43aba16156f99a60b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
   currentZone: {fileID: 0}
+  recipe: {fileID: 11400000, guid: edca9d2e904309e438d1d5b2ae839d12, type: 2}
 --- !u!1001 &7469525461258154374
 PrefabInstance:
   m_ObjectHideFlags: 0

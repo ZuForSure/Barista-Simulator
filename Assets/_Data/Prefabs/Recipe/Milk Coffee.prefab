@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2359464817903067090}
   - component: {fileID: 4183229855303868813}
   - component: {fileID: 1683785144812017373}
-  - component: {fileID: 6830790911327712313}
+  - component: {fileID: 4519049076088523574}
   m_Layer: 0
   m_Name: Milk Coffee
   m_TagString: Untagged
@@ -83,7 +83,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5013355, y: 1.1169078, z: 0.50713396}
   m_Center: {x: 0.00579834, y: 0.5699237, z: 0.008697637}
---- !u!114 &6830790911327712313
+--- !u!114 &4519049076088523574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,11 +92,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1847321870145081614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41cdc999054cc3d41a156e7ea2117aaa, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ebf1bd3c404d8b43aba16156f99a60b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
   currentZone: {fileID: 0}
+  recipe: {fileID: 11400000, guid: 0bacc4747af4df44f87fb68d46576f28, type: 2}
 --- !u!1001 &3657571074625094437
 PrefabInstance:
   m_ObjectHideFlags: 0
