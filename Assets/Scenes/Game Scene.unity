@@ -2413,7 +2413,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ice Box
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9170087456090970098, guid: 3378f26d9112d744e8637037d6c0b05d, type: 3}
+      propertyPath: cup
+      value: 
+      objectReference: {fileID: 8700842512646411506}
+    m_RemovedComponents:
+    - {fileID: 9170087456090970098, guid: 3378f26d9112d744e8637037d6c0b05d, type: 3}
+    - {fileID: 3873201534216535653, guid: 3378f26d9112d744e8637037d6c0b05d, type: 3}
+    - {fileID: 101633795305297656, guid: 3378f26d9112d744e8637037d6c0b05d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
