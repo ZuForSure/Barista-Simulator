@@ -1865,7 +1865,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3727690493509362370, guid: 82bbc096bdd0f774f949c4e9e353b090, type: 3}
       propertyPath: m_Name
-      value: Spawn Zone
+      value: Spawn Point
       objectReference: {fileID: 0}
     - target: {fileID: 5286715614356868822, guid: 82bbc096bdd0f774f949c4e9e353b090, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1938,6 +1938,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423a0fd76932979488311021467239a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1259215995995018034 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1925646443578106821, guid: 82bbc096bdd0f774f949c4e9e353b090, type: 3}
+  m_PrefabInstance: {fileID: 929684762607839643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1472885331020381852 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8742286256338650613, guid: 0fde2b123b8a2b34296f36af2d433d2c, type: 3}
@@ -3267,6 +3272,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1430656267303622269, guid: 9bcbe834b1f6e40489fc88c315966bdb, type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 1259215995995018034}
     - target: {fileID: 2038794829187191399, guid: 9bcbe834b1f6e40489fc88c315966bdb, type: 3}
       propertyPath: m_Name
       value: Recipe Manager

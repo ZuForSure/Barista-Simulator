@@ -1,10 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cup : MonoBehaviour
+public class Cup : MonoBehaviour, IInteract
 {
     [SerializeField] protected List<IngredientAmount> currentIngredients;
     public List<IngredientAmount> CurrentIngredients => currentIngredients;
+
+    public void Interact()
+    {
+        this.CheckRecipeAndSpawn();
+    }
 
     public void AddIngredient(Ingredient ingredient, float amount)
     {
@@ -38,6 +43,29 @@ public class Cup : MonoBehaviour
                 return false;
         }
 
+        if (recipe.Count != currentInCup.Count) return false;
         return true;
+    }
+
+    protected void CheckRecipeAndSpawn()
+    {
+        foreach (var r in RecipeManager.Instance.Recipes)
+        {
+            if (IsMatch(r.recipe.ingredients, CurrentIngredients))
+            {
+                Debug.Log("DUNG");
+
+                RecipeManager.Instance.SpawnRecipe(r, transform.position);
+                this.RemoveAllIngredients();
+                return;
+            }
+        }
+
+        Debug.LogWarning("SAI");
+    }
+
+    protected void RemoveAllIngredients()
+    {
+        currentIngredients.Clear();
     }
 }

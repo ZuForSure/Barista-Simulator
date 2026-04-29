@@ -6,7 +6,9 @@ public class RecipeManager : MonoBehaviour
     protected static RecipeManager instance;
     public static RecipeManager Instance => instance;
 
+    [SerializeField] protected Transform spawnPoint;
     [SerializeField] protected List<HoldAbleRecipe> recipes;
+    public List<HoldAbleRecipe> Recipes => recipes;
 
     private void Awake()
     {
@@ -31,8 +33,8 @@ public class RecipeManager : MonoBehaviour
         Debug.Log(transform.name + ": LoadRecipes", gameObject);
     }
 
-    public void SpawnRecipe()
+    public void SpawnRecipe(HoldAbleRecipe recipe, Vector3 pos)
     {
-
+        Instantiate(recipe.gameObject, spawnPoint.position, Quaternion.identity);
     }
 }
