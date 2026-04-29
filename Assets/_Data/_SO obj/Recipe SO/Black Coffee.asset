@@ -19,3 +19,5 @@ MonoBehaviour:
     amount: 50
   - ingredient: {fileID: 11400000, guid: 4df13f1e0e44e7b409afdb17e72eb723, type: 2}
     amount: 10
+  - ingredient: {fileID: 11400000, guid: e6ac3bed31d0f0140847e580f3f184dd, type: 2}
+    amount: 1
