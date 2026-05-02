@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c2fa365c5f4f3941a754d51fc727297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
   recipes:
   - {fileID: 1854077796108960460}
   - {fileID: 2357715302449909816}
@@ -68,6 +69,10 @@ PrefabInstance:
     - target: {fileID: 7546478849054735639, guid: 12c48fb85a569ea49a04363a9c5b2ea2, type: 3}
       propertyPath: m_Name
       value: VN White Coffee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546478849054735639, guid: 12c48fb85a569ea49a04363a9c5b2ea2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7882750727878531037, guid: 12c48fb85a569ea49a04363a9c5b2ea2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -182,6 +187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Original Milk Tea
       objectReference: {fileID: 0}
+    - target: {fileID: 5047846836119581436, guid: 0eee535f9ed67b74bbb2559ef448003e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -254,6 +263,10 @@ PrefabInstance:
     - target: {fileID: 6377142191821767837, guid: dcd906376c8bfda4ea19d1cd06ac7222, type: 3}
       propertyPath: m_Name
       value: Lychee Tea
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377142191821767837, guid: dcd906376c8bfda4ea19d1cd06ac7222, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -328,6 +341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Matcha Latte
       objectReference: {fileID: 0}
+    - target: {fileID: 9002672366991747801, guid: 35423ccc3e19605448766c6f715805a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -360,6 +377,10 @@ PrefabInstance:
     - target: {fileID: 1847321870145081614, guid: 3ae045ce7ed2aba4985232a45fe5b375, type: 3}
       propertyPath: m_Name
       value: Milk Coffee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1847321870145081614, guid: 3ae045ce7ed2aba4985232a45fe5b375, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2359464817903067090, guid: 3ae045ce7ed2aba4985232a45fe5b375, type: 3}
       propertyPath: m_LocalPosition.x
@@ -473,6 +494,10 @@ PrefabInstance:
     - target: {fileID: 4609134528145098543, guid: 1ad9d2ffb0cc12947bcd74daa7baf496, type: 3}
       propertyPath: m_Name
       value: Black Coffee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609134528145098543, guid: 1ad9d2ffb0cc12947bcd74daa7baf496, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

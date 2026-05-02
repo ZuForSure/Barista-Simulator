@@ -35,6 +35,7 @@ public class RecipeManager : MonoBehaviour
 
     public void SpawnRecipe(HoldAbleRecipe recipe, Vector3 pos)
     {
-        Instantiate(recipe.gameObject, spawnPoint.position, Quaternion.identity);
+        GameObject newObj = Instantiate(recipe.gameObject, spawnPoint.position, Quaternion.identity);
+        newObj.SetActive(true);
     }
 }

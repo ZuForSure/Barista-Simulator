@@ -53,18 +53,16 @@ public class Cup : MonoBehaviour, IInteract
         {
             if (IsMatch(r.recipe.ingredients, CurrentIngredients))
             {
-                Debug.Log("DUNG");
-
                 RecipeManager.Instance.SpawnRecipe(r, transform.position);
                 this.RemoveAllIngredients();
                 return;
             }
         }
 
-        Debug.LogWarning("SAI");
+        Debug.LogWarning("Wrong Recipe");
     }
 
-    protected void RemoveAllIngredients()
+    public void RemoveAllIngredients()
     {
         currentIngredients.Clear();
     }

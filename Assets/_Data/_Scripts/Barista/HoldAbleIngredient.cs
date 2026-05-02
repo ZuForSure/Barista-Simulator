@@ -10,7 +10,7 @@ public class HoldAbleIngredient : Item
 
     public void Use(Cup cup, bool isHolding)
     {
-        if (ingredient.Type == IngredientType.Syrup)
+        if (ingredient.Type == IngredientType.Syrup && cup != null)
         {
             cup.AddIngredient(ingredient, Time.deltaTime * amoutPerSec);
         }

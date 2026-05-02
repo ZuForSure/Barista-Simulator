@@ -30,6 +30,11 @@ public class PlayerInteract : MonoBehaviour
         {
             currentIngredient?.Use(currentCup, false);
         }
+
+        if (InputManager.Instance.IsRemove)
+        {
+            currentCup.RemoveAllIngredients();
+        }
     }
 
     protected void DetectCup()

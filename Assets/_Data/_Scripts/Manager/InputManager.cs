@@ -6,7 +6,7 @@ public class InputManager : MonoBehaviour
     public static InputManager Instance => instance;
 
     [SerializeField] protected float horizontal, vertical;
-    [SerializeField] protected bool isLeftClick, isPouring, isAddTopping, isJump, isFlashLight;
+    [SerializeField] protected bool isLeftClick, isPouring, isAddTopping, isJump, isFlashLight, isRemove;
     public float HorizontalInput => horizontal;
     public float VerticalInput => vertical;
     public bool IsLeftClick => isLeftClick;
@@ -14,6 +14,7 @@ public class InputManager : MonoBehaviour
     public bool IsAddTopping => isAddTopping;
     public bool IsJump => isJump;
     public bool IsFlashLight => isFlashLight;
+    public bool IsRemove => isRemove;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class InputManager : MonoBehaviour
         this.GetAddToppingInput();
         this.GetJumpInput();
         this.GetFlashLightInput();
+        this.GetRemoveInput();
     }
 
     protected void GetMovementInput()
@@ -60,5 +62,10 @@ public class InputManager : MonoBehaviour
     protected void GetFlashLightInput() 
     {
         this.isFlashLight = Input.GetKeyDown(KeyCode.F);
+    }
+
+    protected void GetRemoveInput()
+    {
+        this.isRemove = Input.GetKeyDown(KeyCode.R);
     }
 }
