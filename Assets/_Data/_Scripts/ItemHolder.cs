@@ -1,9 +1,8 @@
 using System;
 using UnityEngine;
 
-public class ItemHolder : MonoBehaviour
+public class ItemHolder : Singleton<ItemHolder>
 {
-    public static ItemHolder Instance;
     public static Action<HoldAbleIngredient> OnHoldIngredient;
     public static Action OnDropItem;
 
@@ -11,11 +10,6 @@ public class ItemHolder : MonoBehaviour
     private Item currentItem;
     public bool IsHolding() => currentItem != null;
     public Item CurrentItem => currentItem;
-
-    private void Awake()
-    {
-        Instance = this;
-    }
 
     public void HoldItem(Item item)
     {

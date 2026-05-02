@@ -1,20 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecipeManager : MonoBehaviour
+public class RecipeManager : Singleton<RecipeManager>
 {
-    protected static RecipeManager instance;
-    public static RecipeManager Instance => instance;
-
     [SerializeField] protected Transform spawnPoint;
     [SerializeField] protected List<HoldAbleRecipe> recipes;
     public List<HoldAbleRecipe> Recipes => recipes;
-
-    private void Awake()
-    {
-        if (instance != null) Debug.LogWarning("Only 1 RecipeManager can exist");
-        RecipeManager.instance = this;
-    }
 
     private void Reset()
     {

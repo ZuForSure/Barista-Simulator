@@ -1,10 +1,7 @@
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class InputManager : Singleton<InputManager>
 {
-    protected static InputManager instance;
-    public static InputManager Instance => instance;
-
     [SerializeField] protected float horizontal, vertical;
     [SerializeField] protected bool isLeftClick, isPouring, isAddTopping, isJump, isFlashLight, isRemove;
     public float HorizontalInput => horizontal;
@@ -15,12 +12,6 @@ public class InputManager : MonoBehaviour
     public bool IsJump => isJump;
     public bool IsFlashLight => isFlashLight;
     public bool IsRemove => isRemove;
-
-    private void Awake()
-    {
-        if (instance != null) Debug.LogWarning("Only 1 InputManager are allowed to exist");
-        InputManager.instance = this;
-    }
 
     private void Update()
     {
