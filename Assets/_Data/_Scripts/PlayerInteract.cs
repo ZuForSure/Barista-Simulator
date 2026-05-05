@@ -33,7 +33,18 @@ public class PlayerInteract : MonoBehaviour
 
         if (InputManager.Instance.IsRemove)
         {
-            currentCup.RemoveAllIngredients();
+            currentCup.ResetCup();
+        }
+
+        //Test Input
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            currentCup?.Stir();
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            currentCup?.Shake();
         }
     }
 

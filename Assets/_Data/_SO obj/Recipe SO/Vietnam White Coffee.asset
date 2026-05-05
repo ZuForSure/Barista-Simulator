@@ -23,3 +23,5 @@ MonoBehaviour:
     amount: 1
   - ingredient: {fileID: 11400000, guid: 52ad328bd886a8f4583abe0b61985941, type: 2}
     amount: 30
+  requireOrder: 1
+  finishAction: 1
