@@ -6,8 +6,7 @@ public class Cup : MonoBehaviour, IInteract
     [SerializeField] protected List<IngredientAmount> currentIngredients;
     public List<IngredientAmount> CurrentIngredients => currentIngredients;
 
-    protected bool isStirred;
-    protected bool isShaken;
+    public FinishAction lastAction = FinishAction.None;
 
     public void Interact()
     {
@@ -36,13 +35,13 @@ public class Cup : MonoBehaviour, IInteract
 
     public void Stir()
     {
-        isStirred = true;
+        lastAction = FinishAction.Stir;
         Debug.Log("Stirred!");
     }
 
     public void Shake()
     {
-        isShaken = true;
+        lastAction = FinishAction.Shake;
         Debug.Log("Shaken!");
     }
 
@@ -106,22 +105,14 @@ public class Cup : MonoBehaviour, IInteract
 
     bool IsFinishActionValid(FinishAction action)
     {
-        switch (action)
-        {
-            case FinishAction.None:
-                return true;
-            case FinishAction.Stir:
-                return isStirred;
-            case FinishAction.Shake:
-                return isShaken;
-        }
-        return false;
+        if (action == FinishAction.None) return true;
+
+        return lastAction == action;
     }
 
     public void ResetCup()
     {
         currentIngredients.Clear();
-        isStirred = false;
-        isShaken = false;
+        lastAction = FinishAction.None;
     }
 }
