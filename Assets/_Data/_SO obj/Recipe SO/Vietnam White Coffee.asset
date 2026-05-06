@@ -14,14 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeID: 0
   recipeName: Vietnam White Coffee
-  ingredients:
-  - ingredient: {fileID: 11400000, guid: 161ebd228939f9e46b42b9f2123481e1, type: 2}
+  steps:
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 161ebd228939f9e46b42b9f2123481e1, type: 2}
     amount: 30
-  - ingredient: {fileID: 11400000, guid: 0564af105afba984c91b8905a0a0eee9, type: 2}
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 0564af105afba984c91b8905a0a0eee9, type: 2}
     amount: 30
-  - ingredient: {fileID: 11400000, guid: e6ac3bed31d0f0140847e580f3f184dd, type: 2}
+  - stepType: 1
+    ingredient: {fileID: 0}
+    amount: 0
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: e6ac3bed31d0f0140847e580f3f184dd, type: 2}
     amount: 1
-  - ingredient: {fileID: 11400000, guid: 52ad328bd886a8f4583abe0b61985941, type: 2}
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 52ad328bd886a8f4583abe0b61985941, type: 2}
     amount: 30
-  requireOrder: 1
-  finishAction: 1
