@@ -14,12 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeID: 1
   recipeName: Black Coffee
-  ingredients:
-  - ingredient: {fileID: 11400000, guid: 52ad328bd886a8f4583abe0b61985941, type: 2}
+  steps:
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 52ad328bd886a8f4583abe0b61985941, type: 2}
     amount: 50
-  - ingredient: {fileID: 11400000, guid: 4df13f1e0e44e7b409afdb17e72eb723, type: 2}
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 4df13f1e0e44e7b409afdb17e72eb723, type: 2}
     amount: 10
-  - ingredient: {fileID: 11400000, guid: e6ac3bed31d0f0140847e580f3f184dd, type: 2}
+  - stepType: 1
+    ingredient: {fileID: 0}
+    amount: 0
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: e6ac3bed31d0f0140847e580f3f184dd, type: 2}
     amount: 1
   requireOrder: 0
   finishAction: 1

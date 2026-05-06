@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class Cup : MonoBehaviour, IInteract
 {
-    [SerializeField] protected List<IngredientAmount> currentIngredients;
-    public List<IngredientAmount> CurrentIngredients => currentIngredients;
+    [SerializeField] protected List<RecipeSteps> playerSteps;
+    public List<RecipeSteps> PlayerSteps => playerSteps;
 
-    public FinishAction lastAction = FinishAction.None;
+    //public FinishAction lastAction = FinishAction.None;
 
     public void Interact()
     {
@@ -15,7 +15,7 @@ public class Cup : MonoBehaviour, IInteract
 
     public void AddIngredient(Ingredient ingredient, float amount)
     {
-        var existing = currentIngredients.Find(i => i.ingredient == ingredient);
+        var existing = playerSteps.Find(i => i.ingredient == ingredient);
 
         if (existing != null)
         {
@@ -23,8 +23,9 @@ public class Cup : MonoBehaviour, IInteract
         }
         else
         {
-            currentIngredients.Add(new IngredientAmount
+            playerSteps.Add(new RecipeSteps
             {
+                stepType = RecipeStepType.AddIngredient,
                 ingredient = ingredient,
                 amount = amount
             });
@@ -35,44 +36,54 @@ public class Cup : MonoBehaviour, IInteract
 
     public void Stir()
     {
-        lastAction = FinishAction.Stir;
+        //lastAction = FinishAction.Stir;
+
+        playerSteps.Add(new RecipeSteps
+        {
+            stepType = RecipeStepType.Stir
+        });
         Debug.Log("Stirred!");
     }
 
     public void Shake()
     {
-        lastAction = FinishAction.Shake;
+        //lastAction = FinishAction.Shake;
+
+        playerSteps.Add(new RecipeSteps
+        {
+            stepType = RecipeStepType.Shake,
+        });
         Debug.Log("Shaken!");
     }
 
-    public bool IsMatch(List<IngredientAmount> recipe, List<IngredientAmount> currentInCup)
+    //public bool IsMatch(List<RecipeSteps> recipe, List<RecipeSteps> currentInCup)
+    //{
+    //    foreach (var r in recipe)
+    //    {
+    //        var i = currentInCup.Find(x => x.ingredient == r.ingredient);
+
+    //        if (i == null) return false;
+
+    //        if (Mathf.Abs(i.amount - r.amount) > 5f)
+    //            return false;
+    //    }
+
+    //    if (recipe.Count != currentInCup.Count) return false;
+    //    return true;
+    //}
+
+    public bool IsMatchWithSteps(List<RecipeSteps> recipeSteps, List<RecipeSteps> playerSteps)
     {
-        foreach (var r in recipe)
+        if (recipeSteps.Count != playerSteps.Count) return false;
+
+        for (int i = 0; i < recipeSteps.Count; i++)
         {
-            var i = currentInCup.Find(x => x.ingredient == r.ingredient);
+            var r = recipeSteps[i];
+            var p = playerSteps[i];
 
-            if (i == null) return false;
+            if (r.ingredient != p.ingredient) return false;
 
-            if (Mathf.Abs(i.amount - r.amount) > 5f)
-                return false;
-        }
-
-        if (recipe.Count != currentInCup.Count) return false;
-        return true;
-    }
-
-    public bool IsMatchWithOrder(List<IngredientAmount> recipe, List<IngredientAmount> currentInCup)
-    {
-        if (recipe.Count != currentInCup.Count) return false;
-
-        for (int i = 0; i < recipe.Count; i++)
-        {
-            var r = recipe[i];
-            var c = currentInCup[i];
-
-            if (r.ingredient != c.ingredient) return false;
-
-            if (Mathf.Abs(r.amount - c.amount) > 5f)
+            if (Mathf.Abs(r.amount - p.amount) > 5f)
                 return false;
         }
 
@@ -83,17 +94,18 @@ public class Cup : MonoBehaviour, IInteract
     {
         foreach (var r in RecipeManager.Instance.Recipes)
         {
-            bool match = r.recipe.requireOrder
-            ? IsMatchWithOrder(r.recipe.ingredients, CurrentIngredients)
-            : IsMatch(r.recipe.ingredients, CurrentIngredients);
+            //bool match = r.recipe.requireOrder
+            //? IsMatchWithSteps(r.recipe.steps, PlayerSteps)
+            //: IsMatch(r.recipe.steps, PlayerSteps);
 
-            if (!match) continue;
+            //if (!match) continue;
+            //if (!IsFinishActionValid(r.recipe.finishAction))
+            //{
+            //    Debug.LogWarning("Missing finish step!");
+            //    return;
+            //}
 
-            if (!IsFinishActionValid(r.recipe.finishAction))
-            {
-                Debug.LogWarning("Missing finish step!");
-                return;
-            }
+            if (!IsMatchWithSteps(r.recipe.steps, playerSteps)) continue;
 
             RecipeManager.Instance.SpawnRecipe(r, transform.position);
             this.ResetCup();
@@ -103,16 +115,17 @@ public class Cup : MonoBehaviour, IInteract
         Debug.LogWarning("Wrong Recipe");
     }
 
-    bool IsFinishActionValid(FinishAction action)
-    {
-        if (action == FinishAction.None) return true;
+    //bool IsFinishActionValid(FinishAction action)
+    //{
+    //    if (action == FinishAction.None) return true;
 
-        return lastAction == action;
-    }
+    //    return lastAction == action;
+    //}
 
     public void ResetCup()
     {
-        currentIngredients.Clear();
-        lastAction = FinishAction.None;
+        playerSteps.Clear();
+        //currentIngredients.Clear();
+        //playerSteps.Clear();
     }
 }
