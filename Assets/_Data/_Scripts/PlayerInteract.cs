@@ -7,9 +7,11 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] protected HoldAbleIngredient currentIngredient;
     [SerializeField] protected Cup currentCup;
     [SerializeField] protected float range = 2f;
+    protected IInteract currentInteractable;
 
     void Update()
     {
+        this.DetectInteractable();
         this.Interact();
         this.DetectCup();
     }
@@ -48,6 +50,30 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
+    void DetectInteractable()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, range))
+        {
+            IInteract interactable = hit.collider.GetComponent<IInteract>();
+
+            if (interactable != null)
+            {
+                if (currentInteractable != interactable)
+                {
+                    currentInteractable = interactable;
+                    UIManager.Instance.Show(interactable.GetInteractText());
+                }
+                return;
+            }
+        }
+
+        currentInteractable = null;
+        UIManager.Instance.Hide();
+    }
+
     protected void DetectCup()
     {
         currentCup = null;
@@ -73,12 +99,6 @@ public class PlayerInteract : MonoBehaviour
             {
                 var interactObj = hit.collider.GetComponentInParent<IInteract>();
                 interactObj?.Interact();
-
-                //var syrup = hit.collider.GetComponent<HoldAbleIngredient>();
-                //if (syrup != null)
-                //{
-                //    currentIngredient = syrup;
-                //}
             }
         }
     }

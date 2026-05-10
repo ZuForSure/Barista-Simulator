@@ -6,8 +6,6 @@ public class Cup : MonoBehaviour, IInteract
     [SerializeField] protected List<RecipeSteps> playerSteps;
     public List<RecipeSteps> PlayerSteps => playerSteps;
 
-    //public FinishAction lastAction = FinishAction.None;
-
     public void Interact()
     {
         this.CheckRecipeAndSpawn();
@@ -36,8 +34,6 @@ public class Cup : MonoBehaviour, IInteract
 
     public void Stir()
     {
-        //lastAction = FinishAction.Stir;
-
         playerSteps.Add(new RecipeSteps
         {
             stepType = RecipeStepType.Stir
@@ -47,30 +43,12 @@ public class Cup : MonoBehaviour, IInteract
 
     public void Shake()
     {
-        //lastAction = FinishAction.Shake;
-
         playerSteps.Add(new RecipeSteps
         {
             stepType = RecipeStepType.Shake,
         });
         Debug.Log("Shaken!");
     }
-
-    //public bool IsMatch(List<RecipeSteps> recipe, List<RecipeSteps> currentInCup)
-    //{
-    //    foreach (var r in recipe)
-    //    {
-    //        var i = currentInCup.Find(x => x.ingredient == r.ingredient);
-
-    //        if (i == null) return false;
-
-    //        if (Mathf.Abs(i.amount - r.amount) > 5f)
-    //            return false;
-    //    }
-
-    //    if (recipe.Count != currentInCup.Count) return false;
-    //    return true;
-    //}
 
     public bool IsMatchWithSteps(List<RecipeSteps> recipeSteps, List<RecipeSteps> playerSteps)
     {
@@ -94,17 +72,6 @@ public class Cup : MonoBehaviour, IInteract
     {
         foreach (var r in RecipeManager.Instance.Recipes)
         {
-            //bool match = r.recipe.requireOrder
-            //? IsMatchWithSteps(r.recipe.steps, PlayerSteps)
-            //: IsMatch(r.recipe.steps, PlayerSteps);
-
-            //if (!match) continue;
-            //if (!IsFinishActionValid(r.recipe.finishAction))
-            //{
-            //    Debug.LogWarning("Missing finish step!");
-            //    return;
-            //}
-
             if (!IsMatchWithSteps(r.recipe.steps, playerSteps)) continue;
 
             RecipeManager.Instance.SpawnRecipe(r, transform.position);
@@ -115,17 +82,13 @@ public class Cup : MonoBehaviour, IInteract
         Debug.LogWarning("Wrong Recipe");
     }
 
-    //bool IsFinishActionValid(FinishAction action)
-    //{
-    //    if (action == FinishAction.None) return true;
-
-    //    return lastAction == action;
-    //}
-
     public void ResetCup()
     {
         playerSteps.Clear();
-        //currentIngredients.Clear();
-        //playerSteps.Clear();
+    }
+
+    public string GetInteractText()
+    {
+        throw new System.NotImplementedException();
     }
 }
