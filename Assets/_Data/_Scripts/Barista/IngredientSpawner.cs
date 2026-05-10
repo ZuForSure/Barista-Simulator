@@ -7,6 +7,8 @@ public class IngredientSpawner : MonoBehaviour,IInteract
 
     public string GetInteractText()
     {
+        string name = this.itemPrefab.Ingredient.name;
+        this.interactText = $" {name}: Left Click to pick up";
         return interactText;
     }
 

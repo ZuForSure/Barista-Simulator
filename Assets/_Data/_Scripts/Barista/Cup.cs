@@ -6,6 +6,8 @@ public class Cup : MonoBehaviour, IInteract
     [SerializeField] protected List<RecipeSteps> playerSteps;
     public List<RecipeSteps> PlayerSteps => playerSteps;
 
+    [SerializeField] private string interactText = "Cup: For pouring syrup";
+
     public void Interact()
     {
         this.CheckRecipeAndSpawn();
@@ -89,6 +91,6 @@ public class Cup : MonoBehaviour, IInteract
 
     public string GetInteractText()
     {
-        throw new System.NotImplementedException();
+        return interactText;
     }
 }

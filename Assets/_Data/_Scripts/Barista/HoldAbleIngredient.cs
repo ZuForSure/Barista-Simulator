@@ -4,6 +4,7 @@ public class HoldAbleIngredient : Item
 {
     [Header("HoldAbleIngredient")]
     [SerializeField] protected Ingredient ingredient;
+    public Ingredient Ingredient => ingredient;
     [SerializeField] protected float amoutPerSec = 20f;
     [SerializeField] protected Cup cup;
     [SerializeField] private bool isConsumable = false;
@@ -29,5 +30,17 @@ public class HoldAbleIngredient : Item
     {
         ItemHolder.Instance.ForceClear();
         Destroy(gameObject);
+    }
+
+    public void SetInterractText()
+    {
+        string name = this.ingredient.name;
+        this.interactText = $" {name}: Left Click to pick up";
+    }
+
+    public override string GetInteractText()
+    {
+        this.SetInterractText();
+        return interactText;
     }
 }

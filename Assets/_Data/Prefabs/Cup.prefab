@@ -146,4 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607896af38cb277408b4c4c37a9f96de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentIngredients: []
+  playerSteps: []
+  interactText: 'Cup: For pouring syrup'

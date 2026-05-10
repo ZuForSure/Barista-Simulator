@@ -11,9 +11,9 @@ public class Item : MonoBehaviour,IInteract
     [Header("Item")]
     public ItemType itemType;
     [SerializeField] private DropZone currentZone;
-    [SerializeField] private string interactText = "Left Click to pick up";
+    [SerializeField] protected string interactText = "Left Click to pick up";
 
-    public string GetInteractText()
+    public virtual string GetInteractText()
     {
         return interactText;
     }
