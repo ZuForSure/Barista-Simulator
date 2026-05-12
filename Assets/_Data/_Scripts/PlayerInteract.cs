@@ -61,10 +61,27 @@ public class PlayerInteract : MonoBehaviour
 
             if (interactable != null)
             {
+                //currentInteractable = interactable;
+                //if (currentInteractable != interactable)
+                //{
+                //    currentInteractable = interactable;
+                //    UIManager.Instance.Show(interactable.GetInteractText());
+                //}
+                //return;
+
                 if (currentInteractable != interactable)
                 {
                     currentInteractable = interactable;
-                    UIManager.Instance.Show(interactable.GetInteractText());
+
+                    if (interactable is Cup && currentIngredient != null)
+                    {
+                        string text = GetCupInteractText();
+                        UIManager.Instance.Show(text);
+                    }
+                    else
+                    {
+                        UIManager.Instance.Show(interactable.GetInteractText());
+                    }
                 }
                 return;
             }
@@ -100,6 +117,23 @@ public class PlayerInteract : MonoBehaviour
                 var interactObj = hit.collider.GetComponentInParent<IInteract>();
                 interactObj?.Interact();
             }
+        }
+    }
+
+    private string GetCupInteractText()
+    {
+        if (currentIngredient == null) return "Cup";
+
+        switch (currentIngredient.Ingredient.Type)
+        {
+            case IngredientType.Syrup:
+                return "Hold E to Pour";
+
+            case IngredientType.Topping:
+                return "Press E to Add Topping";
+
+            default:
+                return "Interact with Cup";
         }
     }
 
