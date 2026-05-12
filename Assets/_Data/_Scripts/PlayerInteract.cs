@@ -61,18 +61,17 @@ public class PlayerInteract : MonoBehaviour
 
             if (interactable != null)
             {
-                //currentInteractable = interactable;
-                //if (currentInteractable != interactable)
-                //{
-                //    currentInteractable = interactable;
-                //    UIManager.Instance.Show(interactable.GetInteractText());
-                //}
-                //return;
-
                 if (currentInteractable != interactable)
                 {
                     currentInteractable = interactable;
 
+                    //Drop Zone
+                    if (interactable is DropZone dropZone)
+                    {
+                        UIManager.Instance.Show(dropZone.GetInteractText());
+                    }
+
+                    //Cup
                     if (interactable is Cup && currentIngredient != null)
                     {
                         string text = GetCupInteractText();

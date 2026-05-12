@@ -1,9 +1,27 @@
 using UnityEngine;
 
-public class DropZone : MonoBehaviour,IDropZone
+public class DropZone : MonoBehaviour,IDropZone, IInteract
 {
     [SerializeField] private Transform placePoint;
     [SerializeField] private Item currentItem;
+
+    public string GetInteractText()
+    {
+        if (ItemHolder.Instance.IsHolding())
+        {
+            return "Left Click to Drop";
+        }
+        else
+        {
+            return "Place item here";
+        }
+    }
+
+    public void Interact()
+    {
+        
+    }
+
     public bool IsOccupied() => currentItem != null;
 
     public void PlaceItem(Item item)
