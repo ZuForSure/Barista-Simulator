@@ -20,6 +20,9 @@ public class Cup : MonoBehaviour, IInteract
         if (existing != null)
         {
             existing.amount += amount;
+
+            int index = playerSteps.IndexOf(existing);
+            UIManager.Instance.UpdateCupUI(index, $"{existing.ingredient.name}: {existing.amount}ml");
         }
         else
         {
@@ -29,6 +32,8 @@ public class Cup : MonoBehaviour, IInteract
                 ingredient = ingredient,
                 amount = amount
             });
+
+            UIManager.Instance.AddTextItem($"{ingredient.name}: {amount}ml");
         }
 
         Debug.Log($"Added {amount}ml of {ingredient.name}");
@@ -87,6 +92,7 @@ public class Cup : MonoBehaviour, IInteract
     public void ResetCup()
     {
         playerSteps.Clear();
+        UIManager.Instance.RemoveTextItem();
     }
 
     public string GetInteractText()
