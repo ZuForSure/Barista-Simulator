@@ -64,6 +64,9 @@ public class UIManager : Singleton<UIManager>
         Cup.OnUpdateStep += UpdateCupUI;
         Cup.OnAddStep += AddTextItem;
         Cup.OnResetCup += RemoveTextItem;
+
+        PlayerInteract.OnShowGuide += ShowUIGuide;
+        PlayerInteract.OnHideGuide += HideUIGuide;
     }
 
     private void OnDisable()
@@ -71,5 +74,8 @@ public class UIManager : Singleton<UIManager>
         Cup.OnUpdateStep -= UpdateCupUI;
         Cup.OnAddStep -= AddTextItem;
         Cup.OnResetCup -= RemoveTextItem;
+
+        PlayerInteract.OnShowGuide -= ShowUIGuide;
+        PlayerInteract.OnHideGuide -= HideUIGuide;
     }
 }
