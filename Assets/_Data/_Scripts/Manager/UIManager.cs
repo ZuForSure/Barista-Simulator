@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class UIManager : Singleton<UIManager>
@@ -19,16 +17,16 @@ public class UIManager : Singleton<UIManager>
     protected override void Awake()
     { 
         base.Awake();
-        Hide();
+        HideUIGuide();
     }
 
-    public void Show(string message)
+    public void ShowUIGuide(string message)
     {
         panel.SetActive(true);
         text.text = message;
     }
 
-    public void Hide()
+    public void HideUIGuide()
     {
         panel.SetActive(false);
     }
@@ -59,5 +57,19 @@ public class UIManager : Singleton<UIManager>
 
         newPrefabs.Clear();
         contentParent.gameObject.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        Cup.OnUpdateStep += UpdateCupUI;
+        Cup.OnAddStep += AddTextItem;
+        Cup.OnResetCup += RemoveTextItem;
+    }
+
+    private void OnDisable()
+    {
+        Cup.OnUpdateStep -= UpdateCupUI;
+        Cup.OnAddStep -= AddTextItem;
+        Cup.OnResetCup -= RemoveTextItem;
     }
 }

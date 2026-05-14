@@ -160,7 +160,7 @@ public class PlayerInteract : MonoBehaviour
             }
         }
 
-        UIManager.Instance.Hide();
+        UIManager.Instance.HideUIGuide();
     }
 
     private bool TryRaycast(out RaycastHit hit, LayerMask mask)
@@ -182,17 +182,17 @@ public class PlayerInteract : MonoBehaviour
 
         if (interactable is DropZone dropZone)
         {
-            UIManager.Instance.Show(dropZone.GetInteractText());
+            UIManager.Instance.ShowUIGuide(dropZone.GetInteractText());
             return;
         }
 
         if (interactable is Cup && currentIngredient != null)
         {
-            UIManager.Instance.Show(GetCupInteractText());
+            UIManager.Instance.ShowUIGuide(GetCupInteractText());
             return;
         }
 
-        UIManager.Instance.Show(interactable.GetInteractText());
+        UIManager.Instance.ShowUIGuide(interactable.GetInteractText());
     }
 
     private void OnEnable()

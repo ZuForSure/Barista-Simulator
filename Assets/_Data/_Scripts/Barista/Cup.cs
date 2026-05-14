@@ -1,8 +1,13 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Cup : MonoBehaviour, IInteract
 {
+    public static Action<int, string> OnUpdateStep;
+    public static Action<string> OnAddStep;
+    public static Action OnResetCup;
+
     [SerializeField] protected List<RecipeSteps> playerSteps;
     public List<RecipeSteps> PlayerSteps => playerSteps;
 
@@ -22,7 +27,10 @@ public class Cup : MonoBehaviour, IInteract
             existing.amount += amount;
 
             int index = playerSteps.IndexOf(existing);
-            UIManager.Instance.UpdateCupUI(index, $"{existing.ingredient.name}: {existing.amount}ml");
+
+            OnUpdateStep?.Invoke(index, $"{existing.ingredient.name}: {existing.amount}");
+
+            //UIManager.Instance.UpdateCupUI(index, $"{existing.ingredient.name}: {existing.amount}ml");
         }
         else
         {
@@ -33,7 +41,9 @@ public class Cup : MonoBehaviour, IInteract
                 amount = amount
             });
 
-            UIManager.Instance.AddTextItem($"{ingredient.name}: {amount}ml");
+            OnAddStep?.Invoke($"{ingredient.name}: {amount}ml");
+
+            //UIManager.Instance.AddTextItem($"{ingredient.name}: {amount}ml");
         }
 
         Debug.Log($"Added {amount}ml of {ingredient.name}");
@@ -92,7 +102,9 @@ public class Cup : MonoBehaviour, IInteract
     public void ResetCup()
     {
         playerSteps.Clear();
-        UIManager.Instance.RemoveTextItem();
+        OnResetCup?.Invoke();
+
+        //UIManager.Instance.RemoveTextItem();
     }
 
     public string GetInteractText()
