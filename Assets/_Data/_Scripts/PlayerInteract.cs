@@ -11,9 +11,8 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-        this.DetectInteractable();
+        this.Detect();
         this.Interact();
-        this.DetectCup();
     }
 
     protected void Interact()
@@ -50,58 +49,58 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
-    void DetectInteractable()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+    //void DetectInteractable()
+    //{
+    //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //    RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, range))
-        {
-            IInteract interactable = hit.collider.GetComponent<IInteract>();
+    //    if (Physics.Raycast(ray, out hit, range))
+    //    {
+    //        IInteract interactable = hit.collider.GetComponent<IInteract>();
 
-            if (interactable != null)
-            {
-                if (currentInteractable != interactable)
-                {
-                    currentInteractable = interactable;
+    //        if (interactable != null)
+    //        {
+    //            if (currentInteractable != interactable)
+    //            {
+    //                currentInteractable = interactable;
 
-                    //Drop Zone
-                    if (interactable is DropZone dropZone)
-                    {
-                        UIManager.Instance.Show(dropZone.GetInteractText());
-                    }
+    //                //Drop Zone
+    //                if (interactable is DropZone dropZone)
+    //                {
+    //                    UIManager.Instance.Show(dropZone.GetInteractText());
+    //                }
 
-                    //Cup
-                    if (interactable is Cup && currentIngredient != null)
-                    {
-                        string text = GetCupInteractText();
-                        UIManager.Instance.Show(text);
-                    }
-                    else
-                    {
-                        UIManager.Instance.Show(interactable.GetInteractText());
-                    }
-                }
-                return;
-            }
-        }
+    //                //Cup
+    //                if (interactable is Cup && currentIngredient != null)
+    //                {
+    //                    string text = GetCupInteractText();
+    //                    UIManager.Instance.Show(text);
+    //                }
+    //                else
+    //                {
+    //                    UIManager.Instance.Show(interactable.GetInteractText());
+    //                }
+    //            }
+    //            return;
+    //        }
+    //    }
 
-        currentInteractable = null;
-        UIManager.Instance.Hide();
-    }
+    //    currentInteractable = null;
+    //    UIManager.Instance.Hide();
+    //}
 
-    protected void DetectCup()
-    {
-        currentCup = null;
+    //protected void DetectCup()
+    //{
+    //    currentCup = null;
 
-        if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out RaycastHit hit, range, cupLayer))
-        {
-            if (hit.collider.TryGetComponent(out Cup cup))
-            {
-                currentCup = cup;
-            }
-        }
-    }
+    //    if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out RaycastHit hit, range, cupLayer))
+    //    {
+    //        if (hit.collider.TryGetComponent(out Cup cup))
+    //        {
+    //            currentCup = cup;
+    //        }
+    //    }
+    //}
 
     protected void PickUpItem()
     {
@@ -134,6 +133,66 @@ public class PlayerInteract : MonoBehaviour
             default:
                 return "Interact with Cup";
         }
+    }
+
+    void Detect()
+    {
+        currentInteractable = null;
+        currentCup = null;
+
+        if (TryRaycast(out RaycastHit hit, ~0)) // ~0 = all layers
+        {
+            // Detect Cup
+            if (((1 << hit.collider.gameObject.layer) & cupLayer) != 0)
+            {
+                if (hit.collider.TryGetComponent(out Cup cup))
+                {
+                    currentCup = cup;
+                }
+            }
+
+            // Detect Interactable
+            IInteract interactable = hit.collider.GetComponent<IInteract>();
+            if (interactable != null)
+            {
+                HandleInteractable(interactable);
+                return;
+            }
+        }
+
+        UIManager.Instance.Hide();
+    }
+
+    private bool TryRaycast(out RaycastHit hit, LayerMask mask)
+    {
+        return Physics.Raycast(
+            mainCam.transform.position,
+            mainCam.transform.forward,
+            out hit,
+            range,
+            mask
+        );
+    }
+
+    void HandleInteractable(IInteract interactable)
+    {
+        if (currentInteractable == interactable) return;
+
+        currentInteractable = interactable;
+
+        if (interactable is DropZone dropZone)
+        {
+            UIManager.Instance.Show(dropZone.GetInteractText());
+            return;
+        }
+
+        if (interactable is Cup && currentIngredient != null)
+        {
+            UIManager.Instance.Show(GetCupInteractText());
+            return;
+        }
+
+        UIManager.Instance.Show(interactable.GetInteractText());
     }
 
     private void OnEnable()
