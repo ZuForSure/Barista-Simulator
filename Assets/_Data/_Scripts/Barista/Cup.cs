@@ -7,6 +7,8 @@ public class Cup : MonoBehaviour, IInteract
     public static Action<int, string> OnUpdateStep;
     public static Action<string> OnAddStep;
     public static Action OnResetCup;
+    public static Action OnShowCupUI;
+    public static Action OnHideCupUI;
 
     [SerializeField] protected List<RecipeSteps> playerSteps;
     public List<RecipeSteps> PlayerSteps => playerSteps;

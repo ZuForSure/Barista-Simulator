@@ -112,6 +112,7 @@ public class PlayerInteract : MonoBehaviour
         }
 
         OnHideGuide?.Invoke();
+        Cup.OnHideCupUI?.Invoke();
     }
 
     private bool TryRaycast(out RaycastHit hit, LayerMask mask)
@@ -140,6 +141,7 @@ public class PlayerInteract : MonoBehaviour
         if (interactable is Cup && currentIngredient != null)
         {
             OnShowGuide?.Invoke(GetCupInteractText());
+            Cup.OnShowCupUI?.Invoke();
             return;
         }
 

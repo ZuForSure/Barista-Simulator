@@ -59,6 +59,16 @@ public class UIManager : Singleton<UIManager>
         contentParent.gameObject.SetActive(false);
     }
 
+    public void ShowCupUI()
+    {
+        contentParent.gameObject.SetActive(true);
+    }
+
+    public void HideCupUI()
+    {
+        contentParent.gameObject.SetActive(false);
+    }
+
     private void OnEnable()
     {
         Cup.OnUpdateStep += UpdateCupUI;
@@ -67,6 +77,9 @@ public class UIManager : Singleton<UIManager>
 
         PlayerInteract.OnShowGuide += ShowUIGuide;
         PlayerInteract.OnHideGuide += HideUIGuide;
+
+        Cup.OnShowCupUI += ShowCupUI; 
+        Cup.OnHideCupUI += HideCupUI;
     }
 
     private void OnDisable()
@@ -77,5 +90,8 @@ public class UIManager : Singleton<UIManager>
 
         PlayerInteract.OnShowGuide -= ShowUIGuide;
         PlayerInteract.OnHideGuide -= HideUIGuide;
+
+        Cup.OnShowCupUI -= ShowCupUI;
+        Cup.OnHideCupUI -= HideCupUI;
     }
 }
