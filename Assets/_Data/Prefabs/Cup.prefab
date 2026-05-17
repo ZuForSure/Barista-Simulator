@@ -147,4 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSteps: []
-  interactText: 'Cup: For pouring syrup'
+  interactText: 'Cup: Left Click to make Beverage'

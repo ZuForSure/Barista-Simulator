@@ -80,6 +80,8 @@ public class UIManager : Singleton<UIManager>
 
         Cup.OnShowCupUI += ShowCupUI; 
         Cup.OnHideCupUI += HideCupUI;
+
+        Cup.OnNotifyCup += ShowUIGuide;
     }
 
     private void OnDisable()
@@ -93,5 +95,8 @@ public class UIManager : Singleton<UIManager>
 
         Cup.OnShowCupUI -= ShowCupUI;
         Cup.OnHideCupUI -= HideCupUI;
+
+        Cup.OnNotifyCup -= ShowUIGuide;
+
     }
 }

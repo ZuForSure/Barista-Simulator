@@ -88,31 +88,62 @@ public class PlayerInteract : MonoBehaviour
 
     void Detect()
     {
-        currentInteractable = null;
-        currentCup = null;
+        //currentInteractable = null;
+        //currentCup = null;
 
-        if (TryRaycast(out RaycastHit hit, ~0)) // ~0 = all layers
+        //if (TryRaycast(out RaycastHit hit, ~0)) // ~0 = all layers
+        //{
+        //    // Detect Cup
+        //    if (((1 << hit.collider.gameObject.layer) & cupLayer) != 0)
+        //    {
+        //        if (hit.collider.TryGetComponent(out Cup cup))
+        //        {
+        //            currentCup = cup;
+        //        }
+        //    }
+
+        //    // Detect Interactable
+        //    IInteract interactable = hit.collider.GetComponent<IInteract>();
+        //    if (interactable != null)
+        //    {
+        //        HandleInteractable(interactable);
+        //        return;
+        //    }
+        //}
+
+        //OnHideGuide?.Invoke();
+        //Cup.OnHideCupUI?.Invoke();
+
+        IInteract newInteractable = null;
+        Cup newCup = null;
+
+        if (TryRaycast(out RaycastHit hit, ~0))
         {
-            // Detect Cup
+            // Detect cup
             if (((1 << hit.collider.gameObject.layer) & cupLayer) != 0)
             {
-                if (hit.collider.TryGetComponent(out Cup cup))
-                {
-                    currentCup = cup;
-                }
+                hit.collider.TryGetComponent(out newCup);
             }
 
-            // Detect Interactable
-            IInteract interactable = hit.collider.GetComponent<IInteract>();
-            if (interactable != null)
-            {
-                HandleInteractable(interactable);
-                return;
-            }
+            // Detect interactable
+            newInteractable = hit.collider.GetComponent<IInteract>();
         }
 
-        OnHideGuide?.Invoke();
-        Cup.OnHideCupUI?.Invoke();
+        if (newInteractable != currentInteractable)
+        {
+            currentInteractable = newInteractable;
+            currentCup = newCup;
+
+            if (currentInteractable != null)
+            {
+                HandleInteractable(currentInteractable);
+            }
+            else
+            {
+                OnHideGuide?.Invoke();
+                Cup.OnHideCupUI?.Invoke();
+            }
+        }
     }
 
     private bool TryRaycast(out RaycastHit hit, LayerMask mask)
@@ -128,9 +159,24 @@ public class PlayerInteract : MonoBehaviour
 
     void HandleInteractable(IInteract interactable)
     {
-        if (currentInteractable == interactable) return;
+        //if (currentInteractable == interactable) return;
 
-        currentInteractable = interactable;
+        //currentInteractable = interactable;
+
+        //if (interactable is DropZone dropZone)
+        //{
+        //    OnShowGuide?.Invoke(dropZone.GetInteractText());
+        //    return;
+        //}
+
+        //if (interactable is Cup && currentIngredient != null)
+        //{
+        //    OnShowGuide?.Invoke(GetCupInteractText());
+        //    Cup.OnShowCupUI?.Invoke();
+        //    return;
+        //}
+
+        //OnShowGuide?.Invoke(interactable.GetInteractText());
 
         if (interactable is DropZone dropZone)
         {
@@ -138,9 +184,13 @@ public class PlayerInteract : MonoBehaviour
             return;
         }
 
-        if (interactable is Cup && currentIngredient != null)
+        if (interactable is Cup)
         {
-            OnShowGuide?.Invoke(GetCupInteractText());
+            if (currentIngredient != null)
+                OnShowGuide?.Invoke(GetCupInteractText());
+            else
+                OnShowGuide?.Invoke("Left Click to make Beverage");
+
             Cup.OnShowCupUI?.Invoke();
             return;
         }

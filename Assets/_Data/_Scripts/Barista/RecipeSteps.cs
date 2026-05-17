@@ -5,6 +5,13 @@ public enum RecipeStepType
     Shake = 2,
 }
 
+public enum RecipeResult
+{
+    Empty = 0,
+    Wrong = 1,
+    Correct = 2,
+}
+
 [System.Serializable]
 public class RecipeSteps
 {
