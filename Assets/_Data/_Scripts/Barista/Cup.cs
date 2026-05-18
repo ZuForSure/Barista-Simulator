@@ -18,8 +18,6 @@ public class Cup : MonoBehaviour, IInteract
 
     public void Interact()
     {
-        //this.CheckRecipeAndSpawn();
-
         var result = CheckRecipe();
 
         switch (result)
@@ -99,20 +97,6 @@ public class Cup : MonoBehaviour, IInteract
         return true;
     }
 
-    //protected void CheckRecipeAndSpawn()
-    //{
-    //    foreach (var r in RecipeManager.Instance.Recipes)
-    //    {
-    //        if (!IsMatchWithSteps(r.recipe.steps, playerSteps)) continue;
-
-    //        RecipeManager.Instance.SpawnRecipe(r, transform.position);
-    //        this.ResetCup();
-    //        return;
-    //    }
-
-    //    Debug.LogWarning("Wrong Recipe");
-    //}
-
     protected RecipeResult CheckRecipe()
     {
         if (playerSteps.Count == 0)
@@ -135,8 +119,6 @@ public class Cup : MonoBehaviour, IInteract
     {
         playerSteps.Clear();
         OnResetCup?.Invoke();
-
-        //UIManager.Instance.RemoveTextItem();
     }
 
     public string GetInteractText()

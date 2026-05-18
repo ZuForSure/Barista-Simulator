@@ -11,5 +11,6 @@ public class Ingredient : ScriptableObject
 public enum IngredientType{
     Syrup = 0,
     Topping = 1,
-    Decor = 2,
+    CustomSyrup = 2,
+    Decor = 3,
 }
