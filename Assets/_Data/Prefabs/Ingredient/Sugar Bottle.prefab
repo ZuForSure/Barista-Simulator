@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955206259953772286}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.82, y: 1.059, z: 1.142}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
@@ -97,9 +97,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 2
   currentZone: {fileID: 0}
+  interactText: Left Click to pick up
   ingredient: {fileID: 11400000, guid: 4df13f1e0e44e7b409afdb17e72eb723, type: 2}
   amoutPerSec: 10
   cup: {fileID: 0}
+  isConsumable: 0
 --- !u!1 &2455222120871611869
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,13 +128,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2455222120871611869}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8772002122917188540}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &7608254747755777704
 MeshFilter:
   m_ObjectHideFlags: 0

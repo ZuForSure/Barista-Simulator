@@ -26,13 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088012918639102464}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.6427876, z: 0, w: 0.7660445}
+  m_LocalRotation: {x: -0, y: 0.98731905, z: -0, w: -0.15874848}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1174282791840706596}
-  m_LocalEulerAnglesHint: {x: 0, y: -80, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 198.269, z: 0}
 --- !u!33 &8348643309830339498
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -110,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4803204413754099520}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.888, y: 1.084, z: -2.439}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
@@ -137,8 +137,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.3832714, y: 1.092989, z: 0.55095303}
-  m_Center: {x: -0.00040397048, y: 0.5557214, z: 0.0013862252}
+  m_Size: {x: 0.49785042, y: 1.092989, z: 0.3999176}
+  m_Center: {x: 0.0013320446, y: 0.5557214, z: 0.009199142}
 --- !u!54 &8708331759088566135
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -180,6 +180,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 2
   currentZone: {fileID: 0}
+  interactText: Left Click to pick up
   ingredient: {fileID: 11400000, guid: d7f658c0101555c4588aa1eaad3386d3, type: 2}
   amoutPerSec: 20
   cup: {fileID: 0}
+  isConsumable: 0

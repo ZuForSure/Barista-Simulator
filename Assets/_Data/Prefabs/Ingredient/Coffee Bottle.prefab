@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628908121399611603}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.5935916, z: -0, w: 0.8047665}
+  m_LocalRotation: {x: 0, y: 0.59359443, z: 0, w: 0.8047644}
   m_LocalPosition: {x: 3.8208804, y: 1.066, z: 1.694}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
@@ -97,9 +97,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 2
   currentZone: {fileID: 0}
+  interactText: Left Click to pick up
   ingredient: {fileID: 11400000, guid: 52ad328bd886a8f4583abe0b61985941, type: 2}
   amoutPerSec: 20
   cup: {fileID: 0}
+  isConsumable: 0
 --- !u!1 &7487933597565302535
 GameObject:
   m_ObjectHideFlags: 0
