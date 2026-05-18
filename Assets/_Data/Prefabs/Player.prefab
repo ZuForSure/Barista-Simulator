@@ -325,10 +325,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   mainCam: {fileID: 7930274437847393759}
-  currentSyrup: {fileID: 0}
+  currentIngredient: {fileID: 0}
   currentCup: {fileID: 0}
   range: 2.5
-  recipe: {fileID: 11400000, guid: e75c16520ab2ee04e829a1edf22b9c43, type: 2}
 --- !u!1 &3011601156745351206
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +494,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.68
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.2
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
