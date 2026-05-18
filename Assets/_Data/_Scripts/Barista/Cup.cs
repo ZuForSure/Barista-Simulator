@@ -60,11 +60,7 @@ public class Cup : MonoBehaviour, IInteract
             });
 
             OnAddStep?.Invoke($"{ingredient.name}: {amount}ml");
-
-            //UIManager.Instance.AddTextItem($"{ingredient.name}: {amount}ml");
         }
-
-        Debug.Log($"Added {amount}ml of {ingredient.name}");
     }
 
     public void Stir()
