@@ -1197,6 +1197,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirty Drawer
       objectReference: {fileID: 0}
+    - target: {fileID: 1293760737610361246, guid: 25a68cbfc700da94fa2c34bc53aa4b49, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1927413259823788836, guid: 25a68cbfc700da94fa2c34bc53aa4b49, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.63
@@ -4188,6 +4192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair
       objectReference: {fileID: 0}
+    - target: {fileID: 782305783727391355, guid: c2b18f43cb8b1004a945898cbdd2a1f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2025662744799014578, guid: c2b18f43cb8b1004a945898cbdd2a1f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4313,7 +4321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &929684762607839643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4446,7 +4454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2763800836589037732
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4540,6 +4548,10 @@ PrefabInstance:
     - target: {fileID: 2405505428607759875, guid: 54805062be24f294286ed5f60e9f8608, type: 3}
       propertyPath: m_Name
       value: Camp Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405505428607759875, guid: 54805062be24f294286ed5f60e9f8608, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8524576585281515023, guid: 54805062be24f294286ed5f60e9f8608, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4967,6 +4979,10 @@ PrefabInstance:
     - target: {fileID: 5118325874446380979, guid: 886c15e26261f254cb49d10f7c98a02c, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118325874446380979, guid: 886c15e26261f254cb49d10f7c98a02c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
