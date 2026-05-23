@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8866039546982799373}
   - component: {fileID: 2495658770473331077}
-  m_Layer: 0
+  - component: {fileID: 3843565185055167048}
+  m_Layer: 8
   m_Name: Bowl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,6 +55,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.892049, y: 0.49637374, z: 0.90747064}
   m_Center: {x: -0.0015421808, y: 0.2518131, z: 0.009252936}
+--- !u!114 &3843565185055167048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7026798480088740133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ce5fcdcc46933438923d8162d5579b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSteps: []
+  interactText: 'Bowl: Left Click to make Matcha Liquid'
 --- !u!1001 &3426975006546209280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105,6 +120,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 81964f4a4f69f7e4ab4341a4241ac898, type: 3}
       propertyPath: m_Name
       value: Bowl model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 81964f4a4f69f7e4ab4341a4241ac898, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

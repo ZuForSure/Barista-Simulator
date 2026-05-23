@@ -9,7 +9,7 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] LayerMask cupLayer;
     [SerializeField] protected Camera mainCam;
     [SerializeField] protected HoldAbleIngredient currentIngredient;
-    [SerializeField] protected Cup currentCup;
+    [SerializeField] protected IngredientContainer currentContainer;
     [SerializeField] protected float range = 2f;
     protected IInteract currentInteractable;
 
@@ -28,28 +28,28 @@ public class PlayerInteract : MonoBehaviour
 
         if (InputManager.Instance.IsPouring)
         {
-            currentIngredient?.Use(currentCup, true);
+            currentIngredient?.Use(currentContainer, true);
         }
 
         if (InputManager.Instance.IsAddTopping)
         {
-            currentIngredient?.Use(currentCup, false);
+            currentIngredient?.Use(currentContainer, false);
         }
 
         if (InputManager.Instance.IsRemove)
         {
-            currentCup.ResetCup();
+            currentContainer.ResetContainer();
         }
 
         //Test Input
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            currentCup?.Stir();
+            currentContainer?.Stir();
         }
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            currentCup?.Shake();
+            currentContainer?.Shake();
         }
     }
 
@@ -88,41 +88,15 @@ public class PlayerInteract : MonoBehaviour
 
     void Detect()
     {
-        //currentInteractable = null;
-        //currentCup = null;
-
-        //if (TryRaycast(out RaycastHit hit, ~0)) // ~0 = all layers
-        //{
-        //    // Detect Cup
-        //    if (((1 << hit.collider.gameObject.layer) & cupLayer) != 0)
-        //    {
-        //        if (hit.collider.TryGetComponent(out Cup cup))
-        //        {
-        //            currentCup = cup;
-        //        }
-        //    }
-
-        //    // Detect Interactable
-        //    IInteract interactable = hit.collider.GetComponent<IInteract>();
-        //    if (interactable != null)
-        //    {
-        //        HandleInteractable(interactable);
-        //        return;
-        //    }
-        //}
-
-        //OnHideGuide?.Invoke();
-        //Cup.OnHideCupUI?.Invoke();
-
         IInteract newInteractable = null;
-        Cup newCup = null;
+        IngredientContainer newContainer = null;
 
         if (TryRaycast(out RaycastHit hit, ~0))
         {
-            // Detect cup
+            // Detect container
             if (((1 << hit.collider.gameObject.layer) & cupLayer) != 0)
             {
-                hit.collider.TryGetComponent(out newCup);
+                hit.collider.TryGetComponent(out newContainer);
             }
 
             // Detect interactable
@@ -132,7 +106,7 @@ public class PlayerInteract : MonoBehaviour
         if (newInteractable != currentInteractable)
         {
             currentInteractable = newInteractable;
-            currentCup = newCup;
+            currentContainer = newContainer;
 
             if (currentInteractable != null)
             {
@@ -159,25 +133,6 @@ public class PlayerInteract : MonoBehaviour
 
     void HandleInteractable(IInteract interactable)
     {
-        //if (currentInteractable == interactable) return;
-
-        //currentInteractable = interactable;
-
-        //if (interactable is DropZone dropZone)
-        //{
-        //    OnShowGuide?.Invoke(dropZone.GetInteractText());
-        //    return;
-        //}
-
-        //if (interactable is Cup && currentIngredient != null)
-        //{
-        //    OnShowGuide?.Invoke(GetCupInteractText());
-        //    Cup.OnShowCupUI?.Invoke();
-        //    return;
-        //}
-
-        //OnShowGuide?.Invoke(interactable.GetInteractText());
-
         if (interactable is DropZone dropZone)
         {
             OnShowGuide?.Invoke(dropZone.GetInteractText());

@@ -6,7 +6,7 @@ public class HoldAbleIngredient : Item
     [SerializeField] protected Ingredient ingredient;
     public Ingredient Ingredient => ingredient;
     [SerializeField] protected float amoutPerSec = 20f;
-    [SerializeField] protected Cup cup;
+    //[SerializeField] protected Cup cup;
     [SerializeField] private bool isConsumable = false;
 
     public void Use(Cup cup, bool isHolding)
@@ -18,6 +18,23 @@ public class HoldAbleIngredient : Item
         else if (ingredient.Type == IngredientType.Topping && !isHolding)
         {
             cup.AddIngredient(ingredient, 1);
+
+            if (isConsumable)
+            {
+                Consume();
+            }
+        }
+    }
+
+    public void Use(IngredientContainer container, bool isHolding)
+    {
+        if (ingredient.Type == IngredientType.Syrup && container != null)
+        {
+            container.AddIngredient(ingredient, Time.deltaTime * amoutPerSec);
+        }
+        else if (ingredient.Type == IngredientType.Topping && !isHolding)
+        {
+            container.AddIngredient(ingredient, 1);
 
             if (isConsumable)
             {

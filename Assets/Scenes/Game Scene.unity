@@ -4435,6 +4435,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3843565185055167048, guid: 50f81b2fe8db54f458fcc0b2d36d3425, type: 3}
+      propertyPath: bowlSteps.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843565185055167048, guid: 50f81b2fe8db54f458fcc0b2d36d3425, type: 3}
+      propertyPath: bowlSteps.Array.data[0].amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843565185055167048, guid: 50f81b2fe8db54f458fcc0b2d36d3425, type: 3}
+      propertyPath: bowlSteps.Array.data[1].amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843565185055167048, guid: 50f81b2fe8db54f458fcc0b2d36d3425, type: 3}
+      propertyPath: bowlSteps.Array.data[2].amount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843565185055167048, guid: 50f81b2fe8db54f458fcc0b2d36d3425, type: 3}
+      propertyPath: bowlSteps.Array.data[2].stepType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843565185055167048, guid: 50f81b2fe8db54f458fcc0b2d36d3425, type: 3}
+      propertyPath: bowlSteps.Array.data[0].ingredient
+      value: 
+      objectReference: {fileID: 11400000, guid: 66a61e586fd301b439a56560f719b036, type: 2}
+    - target: {fileID: 3843565185055167048, guid: 50f81b2fe8db54f458fcc0b2d36d3425, type: 3}
+      propertyPath: bowlSteps.Array.data[1].ingredient
+      value: 
+      objectReference: {fileID: 11400000, guid: 8820ce9fbbd8ca14fa80a6bb1acca191, type: 2}
+    - target: {fileID: 3843565185055167048, guid: 50f81b2fe8db54f458fcc0b2d36d3425, type: 3}
+      propertyPath: bowlSteps.Array.data[2].ingredient
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7026798480088740133, guid: 50f81b2fe8db54f458fcc0b2d36d3425, type: 3}
       propertyPath: m_Name
       value: Bowl
