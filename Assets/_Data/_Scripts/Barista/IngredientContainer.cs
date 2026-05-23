@@ -10,7 +10,6 @@ public abstract class IngredientContainer : MonoBehaviour, IInteract
 
     [SerializeField] protected List<RecipeSteps> playerSteps;
     [SerializeField] protected string interactText;
-    public List<RecipeSteps> PlayerSteps => playerSteps;
 
     public virtual string GetInteractText()
     {

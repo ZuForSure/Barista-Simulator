@@ -25,10 +25,10 @@ public class Bowl : IngredientContainer
             if (ItemHolder.Instance.IsHolding()) return;
 
             HoldAbleIngredient item = Instantiate(matchaLiquid);
+            item.gameObject.SetActive(true);
             ItemHolder.Instance.HoldItem(item);
 
             ResetContainer();
         }
-
     }
 }

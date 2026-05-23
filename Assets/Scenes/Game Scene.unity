@@ -447,6 +447,17 @@ MonoBehaviour:
   - {fileID: 1046591023611839949}
   - {fileID: 74329081476345838}
   - {fileID: 3178178360115935795}
+--- !u!114 &199636656 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3843565185055167048, guid: 50f81b2fe8db54f458fcc0b2d36d3425, type: 3}
+  m_PrefabInstance: {fileID: 6231716641835188752}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ce5fcdcc46933438923d8162d5579b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &204352982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2025662744799014578, guid: c2b18f43cb8b1004a945898cbdd2a1f8, type: 3}
@@ -4436,6 +4447,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3843565185055167048, guid: 50f81b2fe8db54f458fcc0b2d36d3425, type: 3}
+      propertyPath: matchaLiquid
+      value: 
+      objectReference: {fileID: 792803628}
+    - target: {fileID: 3843565185055167048, guid: 50f81b2fe8db54f458fcc0b2d36d3425, type: 3}
       propertyPath: bowlSteps.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -4984,6 +4999,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5412904548073719479, guid: 72516d63fcea03c4c8079cf07c7878dd, type: 3}
+      propertyPath: bowl
+      value: 
+      objectReference: {fileID: 199636656}
     - target: {fileID: 5774091155022082002, guid: 72516d63fcea03c4c8079cf07c7878dd, type: 3}
       propertyPath: m_Name
       value: Table Bar

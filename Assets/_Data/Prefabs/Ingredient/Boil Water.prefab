@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4361609545108332751}
   - component: {fileID: 5402487225672053926}
+  - component: {fileID: 5236381645444224687}
   m_Layer: 0
   m_Name: Boil Water
   m_TagString: Untagged
@@ -54,6 +55,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6456706, y: 0.9190106, z: 0.7218179}
   m_Center: {x: 0.0101237, y: 0.46062824, z: -0.047978386}
+--- !u!114 &5236381645444224687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6087729235792788041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a330857b890e354b9691e989b57ce75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bowl: {fileID: 0}
+  boilWater: {fileID: 11400000, guid: 66a61e586fd301b439a56560f719b036, type: 2}
+  interactText: Left click to Add boil water
 --- !u!1 &9196859796502755020
 GameObject:
   m_ObjectHideFlags: 0
