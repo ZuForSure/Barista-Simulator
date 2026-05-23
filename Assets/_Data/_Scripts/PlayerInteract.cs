@@ -6,7 +6,7 @@ public class PlayerInteract : MonoBehaviour
     public static Action<string> OnShowGuide;
     public static Action OnHideGuide;
 
-    [SerializeField] LayerMask cupLayer;
+    [SerializeField] LayerMask containerLayer;
     [SerializeField] protected Camera mainCam;
     [SerializeField] protected HoldAbleIngredient currentIngredient;
     [SerializeField] protected IngredientContainer currentContainer;
@@ -94,7 +94,7 @@ public class PlayerInteract : MonoBehaviour
         if (TryRaycast(out RaycastHit hit, ~0))
         {
             // Detect container
-            if (((1 << hit.collider.gameObject.layer) & cupLayer) != 0)
+            if (((1 << hit.collider.gameObject.layer) & containerLayer) != 0)
             {
                 hit.collider.TryGetComponent(out newContainer);
             }
@@ -115,7 +115,7 @@ public class PlayerInteract : MonoBehaviour
             else
             {
                 OnHideGuide?.Invoke();
-                Cup.OnHideCupUI?.Invoke();
+                IngredientContainer.OnHideContainerUI?.Invoke();
             }
         }
     }
@@ -139,14 +139,14 @@ public class PlayerInteract : MonoBehaviour
             return;
         }
 
-        if (interactable is Cup)
+        if (interactable is IngredientContainer)
         {
             if (currentIngredient != null)
                 OnShowGuide?.Invoke(GetCupInteractText());
             else
                 OnShowGuide?.Invoke("Left Click to make Beverage");
 
-            Cup.OnShowCupUI?.Invoke();
+            IngredientContainer.OnShowContainerUI?.Invoke();
             return;
         }
 

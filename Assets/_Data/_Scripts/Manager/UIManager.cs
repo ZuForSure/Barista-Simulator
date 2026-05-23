@@ -71,30 +71,30 @@ public class UIManager : Singleton<UIManager>
 
     private void OnEnable()
     {
-        Cup.OnUpdateStep += UpdateCupUI;
-        Cup.OnAddStep += AddTextItem;
-        Cup.OnResetCup += RemoveTextItem;
+        IngredientContainer.OnUpdateStep += UpdateCupUI;
+        IngredientContainer.OnAddStep += AddTextItem;
+        IngredientContainer.OnResetContainer += RemoveTextItem;
 
         PlayerInteract.OnShowGuide += ShowUIGuide;
         PlayerInteract.OnHideGuide += HideUIGuide;
 
-        Cup.OnShowCupUI += ShowCupUI; 
-        Cup.OnHideCupUI += HideCupUI;
+        IngredientContainer.OnShowContainerUI += ShowCupUI;
+        IngredientContainer.OnHideContainerUI += HideCupUI;
 
         Cup.OnNotifyCup += ShowUIGuide;
     }
 
     private void OnDisable()
     {
-        Cup.OnUpdateStep -= UpdateCupUI;
-        Cup.OnAddStep -= AddTextItem;
-        Cup.OnResetCup -= RemoveTextItem;
+        IngredientContainer.OnUpdateStep -= UpdateCupUI;
+        IngredientContainer.OnAddStep -= AddTextItem;
+        IngredientContainer.OnResetContainer -= RemoveTextItem;
 
         PlayerInteract.OnShowGuide -= ShowUIGuide;
         PlayerInteract.OnHideGuide -= HideUIGuide;
 
-        Cup.OnShowCupUI -= ShowCupUI;
-        Cup.OnHideCupUI -= HideCupUI;
+        IngredientContainer.OnShowContainerUI -= ShowCupUI;
+        IngredientContainer.OnHideContainerUI -= HideCupUI;
 
         Cup.OnNotifyCup -= ShowUIGuide;
 

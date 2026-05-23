@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8866039546982799373}
   - component: {fileID: 2495658770473331077}
   - component: {fileID: 3843565185055167048}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Bowl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,6 +69,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSteps: []
   interactText: 'Bowl: Left Click to make Matcha Liquid'
+  bowlSteps: []
+  matchaLiquid: {fileID: 0}
 --- !u!1001 &3426975006546209280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123,7 +125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 81964f4a4f69f7e4ab4341a4241ac898, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

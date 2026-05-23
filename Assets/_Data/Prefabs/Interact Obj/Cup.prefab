@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8473745546729572789}
   - component: {fileID: 1756662514935303524}
   - component: {fileID: 4253899940184429888}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,6 +148,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 18a761e193dad3842b191d63d9c56798, type: 3}
       propertyPath: m_Name
       value: Cup
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 18a761e193dad3842b191d63d9c56798, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

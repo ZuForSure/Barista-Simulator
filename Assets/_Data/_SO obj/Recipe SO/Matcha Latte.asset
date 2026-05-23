@@ -16,5 +16,17 @@ MonoBehaviour:
   recipeName: Matcha Latte
   steps:
   - stepType: 0
-    ingredient: {fileID: 11400000, guid: 66a61e586fd301b439a56560f719b036, type: 2}
+    ingredient: {fileID: 11400000, guid: 161ebd228939f9e46b42b9f2123481e1, type: 2}
+    amount: 80
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 0564af105afba984c91b8905a0a0eee9, type: 2}
+    amount: 20
+  - stepType: 1
+    ingredient: {fileID: 0}
     amount: 0
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: e6ac3bed31d0f0140847e580f3f184dd, type: 2}
+    amount: 1
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 21ff7fc3b0bfced48ab79a12aeb9547c, type: 2}
+    amount: 1

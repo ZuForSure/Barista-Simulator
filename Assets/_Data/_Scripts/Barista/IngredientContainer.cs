@@ -8,6 +8,10 @@ public abstract class IngredientContainer : MonoBehaviour, IInteract
     public static Action<int, string> OnUpdateStep;
     public static Action<string> OnAddStep;
 
+    public static Action OnResetContainer;
+    public static Action OnShowContainerUI;
+    public static Action OnHideContainerUI;
+
     [SerializeField] protected List<RecipeSteps> playerSteps;
     [SerializeField] protected string interactText;
 
@@ -85,5 +89,6 @@ public abstract class IngredientContainer : MonoBehaviour, IInteract
     public virtual void ResetContainer()
     {
         playerSteps.Clear();
+        OnResetContainer?.Invoke();
     }
 }

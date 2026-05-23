@@ -2,9 +2,6 @@ using System;
 
 public class Cup : IngredientContainer
 {
-    public static Action OnResetCup;
-    public static Action OnShowCupUI;
-    public static Action OnHideCupUI;
     public static Action<string> OnNotifyCup;
 
     public override string GetInteractText()
@@ -49,11 +46,5 @@ public class Cup : IngredientContainer
         }
 
         return RecipeResult.Wrong;
-    }
-
-    public override void ResetContainer()
-    {
-        base.ResetContainer();
-        OnResetCup?.Invoke();
     }
 }
