@@ -10,6 +10,7 @@ public enum RecipeResult
     Empty = 0,
     Wrong = 1,
     Correct = 2,
+    HandFull = 3,
 }
 
 [System.Serializable]

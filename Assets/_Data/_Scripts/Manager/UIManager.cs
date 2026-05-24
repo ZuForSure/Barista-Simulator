@@ -103,6 +103,7 @@ public class UIManager : Singleton<UIManager>
         IngredientContainer.OnHideContainerUI += HideCupUI;
 
         Cup.OnNotifyCup += ShowUIGuide;
+        Bowl.OnNotifyBowl += ShowUIGuide;
     }
 
     private void OnDisable()
@@ -118,6 +119,6 @@ public class UIManager : Singleton<UIManager>
         IngredientContainer.OnHideContainerUI -= HideCupUI;
 
         Cup.OnNotifyCup -= ShowUIGuide;
-
+        Bowl.OnNotifyBowl -= ShowUIGuide;
     }
 }
