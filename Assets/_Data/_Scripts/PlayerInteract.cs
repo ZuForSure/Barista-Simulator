@@ -38,7 +38,7 @@ public class PlayerInteract : MonoBehaviour
 
         if (InputManager.Instance.IsRemove)
         {
-            currentContainer.ResetContainer();
+            currentContainer?.ResetContainer();
         }
 
         //Test Input
@@ -103,7 +103,7 @@ public class PlayerInteract : MonoBehaviour
             newInteractable = hit.collider.GetComponent<IInteract>();
         }
 
-        if (newInteractable != currentInteractable)
+        if (newInteractable != currentInteractable || newContainer != currentContainer)
         {
             currentInteractable = newInteractable;
             currentContainer = newContainer;
@@ -139,14 +139,27 @@ public class PlayerInteract : MonoBehaviour
             return;
         }
 
-        if (interactable is IngredientContainer)
+        //if (interactable is IngredientContainer)
+        //{
+        //    if (currentIngredient != null)
+        //        OnShowGuide?.Invoke(GetCupInteractText());
+        //    else
+        //        OnShowGuide?.Invoke("Left Click to make Beverage");
+
+        //    IngredientContainer.OnShowContainerUI?.Invoke();
+        //    return;
+        //}
+
+        if (interactable is IngredientContainer container)
         {
+            currentContainer = container;
+
             if (currentIngredient != null)
                 OnShowGuide?.Invoke(GetCupInteractText());
             else
-                OnShowGuide?.Invoke("Left Click to make Beverage");
+                OnShowGuide?.Invoke(container.GetInteractText());
 
-            IngredientContainer.OnShowContainerUI?.Invoke();
+            IngredientContainer.OnShowContainerUI?.Invoke(container);
             return;
         }
 

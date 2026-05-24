@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 using TMPro;
 using UnityEngine;
 
@@ -13,6 +14,8 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private Transform contentParent;
     [SerializeField] private TextMeshProUGUI stepItemText;
     [SerializeField] private List<GameObject> newPrefabs;
+
+    private IngredientContainer currentContainer;
 
     protected override void Awake()
     { 
@@ -59,8 +62,26 @@ public class UIManager : Singleton<UIManager>
         contentParent.gameObject.SetActive(false);
     }
 
-    public void ShowCupUI()
+    public void ShowContainerUI(IngredientContainer container)
     {
+        if (currentContainer != container)
+        {
+            currentContainer = container;
+
+            RemoveTextItem();
+            foreach (var step in container.PlayerSteps)
+            {
+                if (step.ingredient != null)
+                {
+                    AddTextItem($"{step.ingredient.name}: {step.amount}");
+                }
+                else
+                {
+                    AddTextItem(step.stepType.ToString());
+                }
+            }
+        }
+
         contentParent.gameObject.SetActive(true);
     }
 
@@ -78,7 +99,7 @@ public class UIManager : Singleton<UIManager>
         PlayerInteract.OnShowGuide += ShowUIGuide;
         PlayerInteract.OnHideGuide += HideUIGuide;
 
-        IngredientContainer.OnShowContainerUI += ShowCupUI;
+        IngredientContainer.OnShowContainerUI += ShowContainerUI;
         IngredientContainer.OnHideContainerUI += HideCupUI;
 
         Cup.OnNotifyCup += ShowUIGuide;
@@ -93,7 +114,7 @@ public class UIManager : Singleton<UIManager>
         PlayerInteract.OnShowGuide -= ShowUIGuide;
         PlayerInteract.OnHideGuide -= HideUIGuide;
 
-        IngredientContainer.OnShowContainerUI -= ShowCupUI;
+        IngredientContainer.OnShowContainerUI -= ShowContainerUI;
         IngredientContainer.OnHideContainerUI -= HideCupUI;
 
         Cup.OnNotifyCup -= ShowUIGuide;

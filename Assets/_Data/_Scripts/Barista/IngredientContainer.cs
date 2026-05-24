@@ -4,16 +4,17 @@ using UnityEngine;
 
 public abstract class IngredientContainer : MonoBehaviour, IInteract
 {
-    [Header("Ingredient Container")]
     public static Action<int, string> OnUpdateStep;
     public static Action<string> OnAddStep;
 
     public static Action OnResetContainer;
-    public static Action OnShowContainerUI;
+    public static Action<IngredientContainer> OnShowContainerUI;
     public static Action OnHideContainerUI;
 
+    [Header("Ingredient Container")]
     [SerializeField] protected List<RecipeSteps> playerSteps;
     [SerializeField] protected string interactText;
+    public List<RecipeSteps> PlayerSteps => playerSteps;
 
     public virtual string GetInteractText()
     {
