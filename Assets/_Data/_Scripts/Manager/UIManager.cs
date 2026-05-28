@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.ComponentModel;
 using TMPro;
 using UnityEngine;
 
@@ -10,7 +9,6 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private TextMeshProUGUI text;
 
     [Header("Cup UI")]
-    [SerializeField] private Cup cup;
     [SerializeField] private Transform contentParent;
     [SerializeField] private TextMeshProUGUI stepItemText;
     [SerializeField] private List<GameObject> newPrefabs;
