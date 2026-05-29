@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UIManager : Singleton<UIManager>
 {
+    [SerializeField] private ElmanGameDevTools.PlayerSystem.PlayerController playerController;
+
     [Header("Guide UI")]
     [SerializeField] private GameObject panel;
     [SerializeField] private TextMeshProUGUI text;
@@ -97,7 +99,8 @@ public class UIManager : Singleton<UIManager>
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Time.timeScale = 0f;
+
+        playerController.CanControl = false;
     }
 
     public void HideComputerUI()
@@ -106,7 +109,8 @@ public class UIManager : Singleton<UIManager>
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        Time.timeScale = 1f;
+
+        playerController.CanControl = true;
     }
 
     private void OnEnable()

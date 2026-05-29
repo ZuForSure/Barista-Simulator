@@ -92,6 +92,9 @@ namespace ElmanGameDevTools.PlayerSystem
         public bool IsCrouching => _isCrouching;
         public MovementState CurrentState => _currentMovementState;
 
+        [Header("Check Control")]
+        public bool CanControl = true;
+
         private void Start()
         {
             if (controller == null) controller = GetComponent<CharacterController>();
@@ -111,6 +114,8 @@ namespace ElmanGameDevTools.PlayerSystem
 
         private void Update()
         {
+            if (!CanControl) return;
+
             CheckGroundStatus();
             HandleCrouchLogic();
             UpdateMovementState();
