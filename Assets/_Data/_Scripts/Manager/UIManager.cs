@@ -13,6 +13,9 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private TextMeshProUGUI stepItemText;
     [SerializeField] private List<GameObject> newPrefabs;
 
+    [Header("Computer UI")]
+    [SerializeField] private GameObject computerPanel;
+
     private IngredientContainer currentContainer;
 
     protected override void Awake()
@@ -88,6 +91,24 @@ public class UIManager : Singleton<UIManager>
         contentParent.gameObject.SetActive(false);
     }
 
+    public void ShowComputerUI()
+    {
+        computerPanel.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
+    }
+
+    public void HideComputerUI()
+    {
+        computerPanel.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+    }
+
     private void OnEnable()
     {
         IngredientContainer.OnUpdateStep += UpdateCupUI;
@@ -102,6 +123,7 @@ public class UIManager : Singleton<UIManager>
 
         Cup.OnNotifyCup += ShowUIGuide;
         Bowl.OnNotifyBowl += ShowUIGuide;
+        Computer.OnOpenComputer += ShowComputerUI;
     }
 
     private void OnDisable()
@@ -118,5 +140,6 @@ public class UIManager : Singleton<UIManager>
 
         Cup.OnNotifyCup -= ShowUIGuide;
         Bowl.OnNotifyBowl -= ShowUIGuide;
+        Computer.OnOpenComputer -= ShowComputerUI;
     }
 }
