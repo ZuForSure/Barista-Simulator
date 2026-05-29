@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class UIManager : Singleton<UIManager>
 
     [Header("Computer UI")]
     [SerializeField] private GameObject computerPanel;
+    public static Action OnCloseComputer;
 
     private IngredientContainer currentContainer;
 
@@ -96,21 +98,21 @@ public class UIManager : Singleton<UIManager>
     public void ShowComputerUI()
     {
         computerPanel.SetActive(true);
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        playerController.CanControl = false;
+        SetPlayerControl(false);
     }
 
     public void HideComputerUI()
     {
         computerPanel.SetActive(false);
+        SetPlayerControl(true);
+    }
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+    private void SetPlayerControl(bool canControl)
+    {
+        playerController.CanControl = canControl;
 
-        playerController.CanControl = true;
+        Cursor.lockState = canControl ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = !canControl;
     }
 
     private void OnEnable()
@@ -128,6 +130,7 @@ public class UIManager : Singleton<UIManager>
         Cup.OnNotifyCup += ShowUIGuide;
         Bowl.OnNotifyBowl += ShowUIGuide;
         Computer.OnOpenComputer += ShowComputerUI;
+        OnCloseComputer += HideComputerUI;
     }
 
     private void OnDisable()
@@ -145,5 +148,6 @@ public class UIManager : Singleton<UIManager>
         Cup.OnNotifyCup -= ShowUIGuide;
         Bowl.OnNotifyBowl -= ShowUIGuide;
         Computer.OnOpenComputer -= ShowComputerUI;
+        OnCloseComputer -= HideComputerUI;
     }
 }

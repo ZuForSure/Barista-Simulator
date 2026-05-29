@@ -126,7 +126,7 @@ namespace ElmanGameDevTools.PlayerSystem
             HandleFovChange();
 
             if (enableHeadBob) HandleHeadBob();
-        }
+        }        
 
         /// <summary>
         /// SphereCast based ground detection to ensure stability on slopes and stairs.
