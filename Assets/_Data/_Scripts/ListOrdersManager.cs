@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -6,16 +7,49 @@ public class ListOrdersManager : Singleton<ListOrdersManager>
     [SerializeField] private Transform contentParent;
     [SerializeField] private GameObject itemPayPrefab;
     [SerializeField] private TextMeshProUGUI totalPrice;
+
     private float currentTotal = 0;
+    private Dictionary<Recipe, ItemPayUI> items = new();
 
     public void AddItemPay(Recipe recipe)
     {
-        GameObject go = Instantiate(itemPayPrefab, contentParent);
+        if (items.ContainsKey(recipe))
+        {
+            items[recipe].SendMessage("OnAdd");
+            return;
+        }
 
-        TextMeshProUGUI txt = go.GetComponent<TextMeshProUGUI>();
-        txt.text = $"{recipe.recipeName}: {recipe.price}k VND";
+        GameObject go = Instantiate(itemPayPrefab, contentParent);
+        ItemPayUI itemUI = go.GetComponent<ItemPayUI>();
+
+        itemUI.Setup(recipe, OnItemValueChanged);
+
+        items.Add(recipe, itemUI);
 
         currentTotal += recipe.price;
+        UpdateTotalUI();
+    }
+
+    private void OnItemValueChanged(Recipe recipe, int quantity)
+    {
+        RecalculateTotal();
+
+        if (quantity <= 0)
+        {
+            items.Remove(recipe);
+        }
+    }
+
+    private void RecalculateTotal()
+    {
+        currentTotal = 0;
+
+        foreach (var kvp in items)
+        {
+            var ui = kvp.Value;
+            currentTotal += ui.GetRecipe().price * ui.GetQuantity();
+        }
+
         UpdateTotalUI();
     }
 
