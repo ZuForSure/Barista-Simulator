@@ -1,8 +1,6 @@
-using UnityEngine;
-
-public class QuitBtnComputerUI : MonoBehaviour
+public class QuitBtnComputerUI : BaseButton
 {
-    public void OnClickQuit()
+    protected override void HandleClick()
     {
         UIManager.OnCloseComputer?.Invoke();
     }

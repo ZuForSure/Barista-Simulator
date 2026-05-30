@@ -30,3 +30,4 @@ MonoBehaviour:
   - stepType: 0
     ingredient: {fileID: 11400000, guid: 21ff7fc3b0bfced48ab79a12aeb9547c, type: 2}
     amount: 1
+  price: 45
