@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    public static Action<string> OnShowGuide;
-    public static Action OnHideGuide;
+    //public static Action<string> OnShowGuide;
+    //public static Action OnHideGuide;
 
     [SerializeField] LayerMask containerLayer;
     [SerializeField] protected Camera mainCam;
@@ -114,8 +114,8 @@ public class PlayerInteract : MonoBehaviour
             }
             else
             {
-                OnHideGuide?.Invoke();
-                IngredientContainer.OnHideContainerUI?.Invoke();
+                GameEvents.UIevents.OnHideGuideUI?.Invoke();
+                GameEvents.UIevents.OnHideContainerUI?.Invoke();
             }
         }
     }
@@ -135,47 +135,36 @@ public class PlayerInteract : MonoBehaviour
     {
         if (interactable is DropZone dropZone)
         {
-            OnShowGuide?.Invoke(dropZone.GetInteractText());
+            GameEvents.UIevents.OnShowGuideUI?.Invoke(dropZone.GetInteractText());
             return;
         }
-
-        //if (interactable is IngredientContainer)
-        //{
-        //    if (currentIngredient != null)
-        //        OnShowGuide?.Invoke(GetCupInteractText());
-        //    else
-        //        OnShowGuide?.Invoke("Left Click to make Beverage");
-
-        //    IngredientContainer.OnShowContainerUI?.Invoke();
-        //    return;
-        //}
 
         if (interactable is IngredientContainer container)
         {
             currentContainer = container;
 
             if (currentIngredient != null)
-                OnShowGuide?.Invoke(GetCupInteractText());
+                GameEvents.UIevents.OnShowGuideUI?.Invoke(GetCupInteractText());
             else
-                OnShowGuide?.Invoke(container.GetInteractText());
+                GameEvents.UIevents.OnShowGuideUI?.Invoke(container.GetInteractText());
 
-            IngredientContainer.OnShowContainerUI?.Invoke(container);
+            GameEvents.UIevents.OnShowContainerUI?.Invoke(container);
             return;
         }
 
-        OnShowGuide?.Invoke(interactable.GetInteractText());
+        GameEvents.UIevents.OnShowGuideUI?.Invoke(interactable.GetInteractText());
     }
 
     private void OnEnable()
     {
-        ItemHolder.OnHoldIngredient += SetCurrentIngredient;
-        ItemHolder.OnDropItem += ClearIngredient;
+        GameEvents.GameplayEvents.OnHoldIngredient += SetCurrentIngredient;
+        GameEvents.GameplayEvents.OnDropItem += ClearIngredient;
     }
 
     private void OnDisable()
     {
-        ItemHolder.OnHoldIngredient -= SetCurrentIngredient;
-        ItemHolder.OnDropItem -= ClearIngredient;
+        GameEvents.GameplayEvents.OnHoldIngredient -= SetCurrentIngredient;
+        GameEvents.GameplayEvents.OnDropItem -= ClearIngredient;
     }
 
     public void SetCurrentIngredient(HoldAbleIngredient ingredient)

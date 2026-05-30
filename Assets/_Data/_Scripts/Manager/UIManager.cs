@@ -18,23 +18,22 @@ public class UIManager : Singleton<UIManager>
 
     [Header("Computer UI")]
     [SerializeField] private GameObject computerPanel;
-    public static Action OnCloseComputer;
 
     private IngredientContainer currentContainer;
 
     protected override void Awake()
     { 
         base.Awake();
-        HideUIGuide();
+        HideGuideUI();
     }
 
-    public void ShowUIGuide(string message)
+    public void ShowGuideUI(string message)
     {
         panel.SetActive(true);
         text.text = message;
     }
 
-    public void HideUIGuide()
+    public void HideGuideUI()
     {
         panel.SetActive(false);
     }
@@ -90,7 +89,7 @@ public class UIManager : Singleton<UIManager>
         contentParent.gameObject.SetActive(true);
     }
 
-    public void HideCupUI()
+    public void HideContainerUI()
     {
         contentParent.gameObject.SetActive(false);
     }
@@ -117,37 +116,31 @@ public class UIManager : Singleton<UIManager>
 
     private void OnEnable()
     {
-        IngredientContainer.OnUpdateStep += UpdateCupUI;
-        IngredientContainer.OnAddStep += AddTextItem;
-        IngredientContainer.OnResetContainer += RemoveTextItem;
+        GameEvents.UIevents.OnUpdateStepContainerUI += UpdateCupUI;
+        GameEvents.UIevents.OnAddStepContainerUI += AddTextItem;
+        GameEvents.UIevents.OnResetContainerUI += RemoveTextItem;
 
-        PlayerInteract.OnShowGuide += ShowUIGuide;
-        PlayerInteract.OnHideGuide += HideUIGuide;
+        GameEvents.UIevents.OnShowGuideUI += ShowGuideUI;
+        GameEvents.UIevents.OnHideGuideUI += HideGuideUI;
+        GameEvents.UIevents.OnShowContainerUI += ShowContainerUI;
+        GameEvents.UIevents.OnHideContainerUI += HideContainerUI;
 
-        IngredientContainer.OnShowContainerUI += ShowContainerUI;
-        IngredientContainer.OnHideContainerUI += HideCupUI;
-
-        Cup.OnNotifyCup += ShowUIGuide;
-        Bowl.OnNotifyBowl += ShowUIGuide;
-        Computer.OnOpenComputer += ShowComputerUI;
-        OnCloseComputer += HideComputerUI;
+        GameEvents.UIevents.OnOpenComputerUI += ShowComputerUI;
+        GameEvents.UIevents.OnCloseComputerUI += HideComputerUI;
     }
 
     private void OnDisable()
     {
-        IngredientContainer.OnUpdateStep -= UpdateCupUI;
-        IngredientContainer.OnAddStep -= AddTextItem;
-        IngredientContainer.OnResetContainer -= RemoveTextItem;
+        GameEvents.UIevents.OnUpdateStepContainerUI -= UpdateCupUI;
+        GameEvents.UIevents.OnAddStepContainerUI -= AddTextItem;
+        GameEvents.UIevents.OnResetContainerUI -= RemoveTextItem;
 
-        PlayerInteract.OnShowGuide -= ShowUIGuide;
-        PlayerInteract.OnHideGuide -= HideUIGuide;
+        GameEvents.UIevents.OnShowGuideUI -= ShowGuideUI;
+        GameEvents.UIevents.OnHideGuideUI -= HideGuideUI;
+        GameEvents.UIevents.OnShowContainerUI -= ShowContainerUI;
+        GameEvents.UIevents.OnHideContainerUI -= HideContainerUI;
 
-        IngredientContainer.OnShowContainerUI -= ShowContainerUI;
-        IngredientContainer.OnHideContainerUI -= HideCupUI;
-
-        Cup.OnNotifyCup -= ShowUIGuide;
-        Bowl.OnNotifyBowl -= ShowUIGuide;
-        Computer.OnOpenComputer -= ShowComputerUI;
-        OnCloseComputer -= HideComputerUI;
+        GameEvents.UIevents.OnOpenComputerUI -= ShowComputerUI;
+        GameEvents.UIevents.OnCloseComputerUI -= HideComputerUI;
     }
 }

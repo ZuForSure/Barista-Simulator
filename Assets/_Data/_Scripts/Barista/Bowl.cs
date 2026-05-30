@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Bowl : IngredientContainer
 {
-    public static Action<string> OnNotifyBowl;
-
     [Header("Bowl")]
     [SerializeField] protected List<RecipeSteps> bowlSteps;
     [SerializeField] protected HoldAbleIngredient matchaLiquid;
@@ -23,36 +21,22 @@ public class Bowl : IngredientContainer
         switch (result)
         {
             case RecipeResult.Empty:
-                OnNotifyBowl("You need to add ingredient first");
+                GameEvents.UIevents.OnShowGuideUI("You need to add ingredient first");
                 break;
 
             case RecipeResult.Wrong:
-                OnNotifyBowl("Wrong recipe, press R to reset");
+                GameEvents.UIevents.OnShowGuideUI("Wrong recipe, press R to reset");
                 break;
 
             case RecipeResult.HandFull:
-                OnNotifyBowl("Your hand is full");
+                GameEvents.UIevents.OnShowGuideUI("Your hand is full");
                 break;
 
             case RecipeResult.Correct:
-                OnNotifyBowl("Matcha liquid created!");
+                GameEvents.UIevents.OnShowGuideUI("Matcha liquid created!");
                 break;
         }
     }
-
-    //protected void TrySpawn()
-    //{
-    //    if (IsMatchWithSteps(playerSteps, bowlSteps))
-    //    {
-    //        if (ItemHolder.Instance.IsHolding()) return;
-
-    //        HoldAbleIngredient item = Instantiate(matchaLiquid);
-    //        item.gameObject.SetActive(true);
-    //        ItemHolder.Instance.HoldItem(item);
-
-    //        ResetContainer();
-    //    }
-    //}
 
     protected RecipeResult CheckRecipe()
     {

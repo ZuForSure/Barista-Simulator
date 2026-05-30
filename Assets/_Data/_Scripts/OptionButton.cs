@@ -5,6 +5,6 @@ public class OptionButton : BaseButton
     [SerializeField] protected Recipe recipe;
     protected override void HandleClick()
     {
-        GameEvents.OnSelectRecipe?.Invoke(recipe);
+        GameEvents.Order.OnSelectRecipe?.Invoke(recipe);
     }
 }

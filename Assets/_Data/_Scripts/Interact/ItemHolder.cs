@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class ItemHolder : Singleton<ItemHolder>
 {
-    public static Action<HoldAbleIngredient> OnHoldIngredient;
-    public static Action OnDropItem;
-
     [SerializeField] private Transform holdPointSmall, holdPointBig;
     private Item currentItem;
     public bool IsHolding() => currentItem != null;
@@ -17,7 +14,7 @@ public class ItemHolder : Singleton<ItemHolder>
 
         if (item is HoldAbleIngredient ingredient)
         {
-            OnHoldIngredient?.Invoke(ingredient);
+            GameEvents.GameplayEvents.OnHoldIngredient?.Invoke(ingredient);
         }
 
         if (item.TryGetComponent<Rigidbody>(out var rb))
@@ -51,7 +48,7 @@ public class ItemHolder : Singleton<ItemHolder>
 
             dropZone.PlaceItem(currentItem);
             currentItem = null;
-            OnDropItem?.Invoke();
+            GameEvents.GameplayEvents.OnDropItem?.Invoke();
         }
         else
         {
@@ -62,6 +59,6 @@ public class ItemHolder : Singleton<ItemHolder>
     public void ForceClear()
     {
         currentItem = null;
-        OnDropItem?.Invoke();
+        GameEvents.GameplayEvents.OnDropItem?.Invoke();
     }
 }

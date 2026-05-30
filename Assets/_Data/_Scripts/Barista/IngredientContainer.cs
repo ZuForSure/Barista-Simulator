@@ -4,13 +4,6 @@ using UnityEngine;
 
 public abstract class IngredientContainer : MonoBehaviour, IInteract
 {
-    public static Action<int, string> OnUpdateStep;
-    public static Action<string> OnAddStep;
-
-    public static Action OnResetContainer;
-    public static Action<IngredientContainer> OnShowContainerUI;
-    public static Action OnHideContainerUI;
-
     [Header("Ingredient Container")]
     [SerializeField] protected List<RecipeSteps> playerSteps;
     [SerializeField] protected string interactText;
@@ -23,7 +16,7 @@ public abstract class IngredientContainer : MonoBehaviour, IInteract
 
     public virtual void Interact()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void AddIngredient(Ingredient ingredient, float amount)
@@ -36,7 +29,7 @@ public abstract class IngredientContainer : MonoBehaviour, IInteract
 
             int index = playerSteps.IndexOf(existing);
 
-            OnUpdateStep?.Invoke(index, $"{existing.ingredient.name}: {existing.amount}");
+            GameEvents.UIevents.OnUpdateStepContainerUI?.Invoke(index, $"{existing.ingredient.name}: {existing.amount}");
         }
         else
         {
@@ -47,7 +40,7 @@ public abstract class IngredientContainer : MonoBehaviour, IInteract
                 amount = amount
             });
 
-            OnAddStep?.Invoke($"{ingredient.name}: {amount}ml");
+            GameEvents.UIevents.OnAddStepContainerUI?.Invoke($"{ingredient.name}: {amount}ml");
         }
     }
 
@@ -90,6 +83,6 @@ public abstract class IngredientContainer : MonoBehaviour, IInteract
     public virtual void ResetContainer()
     {
         playerSteps.Clear();
-        OnResetContainer?.Invoke();
+        GameEvents.UIevents.OnResetContainerUI?.Invoke();
     }
 }

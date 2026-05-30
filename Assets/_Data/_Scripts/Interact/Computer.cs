@@ -1,9 +1,7 @@
-using System;
 using UnityEngine;
 
 public class Computer : MonoBehaviour, IInteract
 {
-    public static Action OnOpenComputer;
     [SerializeField] protected string interactText = "Computer: Left Click to use";
 
     public string GetInteractText()
@@ -13,6 +11,6 @@ public class Computer : MonoBehaviour, IInteract
 
     public void Interact()
     {
-        OnOpenComputer?.Invoke();
+        GameEvents.UIevents.OnOpenComputerUI?.Invoke();
     }
 }

@@ -60,11 +60,11 @@ public class ListOrdersManager : Singleton<ListOrdersManager>
 
     private void OnEnable()
     {
-        GameEvents.OnSelectRecipe += AddItemPay;
+        GameEvents.Order.OnSelectRecipe += AddItemPay;
     }
 
     private void OnDisable()
     {
-        GameEvents.OnSelectRecipe -= AddItemPay;
+        GameEvents.Order.OnSelectRecipe -= AddItemPay;
     }
 }

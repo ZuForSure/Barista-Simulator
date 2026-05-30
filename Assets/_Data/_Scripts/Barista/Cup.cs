@@ -2,8 +2,6 @@ using System;
 
 public class Cup : IngredientContainer
 {
-    public static Action<string> OnNotifyCup;
-
     public override string GetInteractText()
     {
         this.interactText = "Cup: Left Click to make Beverage";
@@ -17,15 +15,15 @@ public class Cup : IngredientContainer
         switch (result)
         {
             case RecipeResult.Empty:
-                OnNotifyCup?.Invoke("You need to add ingredient first");
+                GameEvents.UIevents.OnShowGuideUI("You need to add ingredient first");
                 break;
 
             case RecipeResult.Wrong:
-                OnNotifyCup?.Invoke("Wrong Recipe, press R to reset");
+                GameEvents.UIevents.OnShowGuideUI("Wrong recipe, press R to reset");
                 break;
 
             case RecipeResult.Correct:
-                OnNotifyCup?.Invoke("Done");
+                GameEvents.UIevents.OnShowGuideUI("Done");
                 break;
         }
     }
