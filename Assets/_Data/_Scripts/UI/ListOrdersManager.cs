@@ -74,6 +74,16 @@ public class ListOrdersManager : Singleton<ListOrdersManager>
         UpdateTotalUI();
     }
 
+    public Dictionary<Recipe, ItemPayUI> GetItems()
+    {
+        return items;
+    }
+
+    public float GetTotal()
+    {
+        return currentTotal;
+    }
+
     private void OnEnable()
     {
         GameEvents.Order.OnSelectRecipe += AddItemPay;
