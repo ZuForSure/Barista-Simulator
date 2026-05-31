@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Black Coffee
   m_EditorClassIdentifier: 
   recipeID: 1
-  recipeName: Black Coffee
+  recipeName: "C\xE0 ph\xEA \u0111en"
   steps:
   - stepType: 0
     ingredient: {fileID: 11400000, guid: 52ad328bd886a8f4583abe0b61985941, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Vietnam White Coffee
   m_EditorClassIdentifier: 
   recipeID: 0
-  recipeName: White Coffee
+  recipeName: "B\u1EA1c x\u1EC9u"
   steps:
   - stepType: 0
     ingredient: {fileID: 11400000, guid: 161ebd228939f9e46b42b9f2123481e1, type: 2}

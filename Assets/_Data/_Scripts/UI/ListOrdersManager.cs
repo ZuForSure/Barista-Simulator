@@ -58,13 +58,31 @@ public class ListOrdersManager : Singleton<ListOrdersManager>
         totalPrice.text = $"Total: {currentTotal}.000 VND";
     }
 
+    public void ClearAllItems()
+    {
+        foreach (var item in items.Values)
+        {
+            if (item != null)
+            {
+                Destroy(item.gameObject);
+            }
+        }
+
+        items.Clear();
+
+        currentTotal = 0;
+        UpdateTotalUI();
+    }
+
     private void OnEnable()
     {
         GameEvents.Order.OnSelectRecipe += AddItemPay;
+        GameEvents.Order.OnClearAllItems += ClearAllItems;
     }
 
     private void OnDisable()
     {
         GameEvents.Order.OnSelectRecipe -= AddItemPay;
+        GameEvents.Order.OnClearAllItems -= ClearAllItems;
     }
 }

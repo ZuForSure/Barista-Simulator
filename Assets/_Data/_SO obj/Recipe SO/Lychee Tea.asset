@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lychee Tea
   m_EditorClassIdentifier: 
   recipeID: 3
-  recipeName: Lychee Tea
+  recipeName: "Tr\xE0 v\u1EA3i"
   steps:
   - stepType: 0
     ingredient: {fileID: 11400000, guid: 4df13f1e0e44e7b409afdb17e72eb723, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Original Milk Tea
   m_EditorClassIdentifier: 
   recipeID: 4
-  recipeName: Original Milk Tea
+  recipeName: "Tr\xE0 s\u1EEFa"
   steps:
   - stepType: 0
     ingredient: {fileID: 11400000, guid: d7f658c0101555c4588aa1eaad3386d3, type: 2}

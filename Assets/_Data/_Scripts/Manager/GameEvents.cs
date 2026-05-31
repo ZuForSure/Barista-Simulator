@@ -7,6 +7,7 @@ public static class GameEvents
     {
         public static Action<Recipe> OnSelectRecipe;
         public static Action<Recipe, int> OnItemChanged;
+        public static Action OnClearAllItems;
     }
 
     //================== UI ====================

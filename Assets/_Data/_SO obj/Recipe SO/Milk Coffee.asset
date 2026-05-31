@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Milk Coffee
   m_EditorClassIdentifier: 
   recipeID: 2
-  recipeName: Milk Coffee
+  recipeName: "C\xE0 ph\xEA s\u1EEFa"
   steps:
   - stepType: 0
     ingredient: {fileID: 11400000, guid: 52ad328bd886a8f4583abe0b61985941, type: 2}
