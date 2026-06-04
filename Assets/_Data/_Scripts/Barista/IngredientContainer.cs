@@ -40,7 +40,7 @@ public abstract class IngredientContainer : MonoBehaviour, IInteract
                 amount = amount
             });
 
-            GameEvents.UIevents.OnAddStepContainerUI?.Invoke($"{ingredient.name}: {amount}ml");
+            GameEvents.UIevents.OnAddStepContainerUI?.Invoke($"{ingredient.name}: {amount}");
         }
     }
 
