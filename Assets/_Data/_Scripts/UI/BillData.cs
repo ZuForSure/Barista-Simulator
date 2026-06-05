@@ -7,7 +7,6 @@ public class BillData
     public string time;
     public List<BillItemData> items;
     public int total;
-    public string footer;
 }
 
 [System.Serializable]

@@ -17,7 +17,6 @@ public class BillUI : MonoBehaviour
     {
         txtTitle.text = data.shopName;
         txtTime.text = data.time;
-        txtFooter.text = data.footer;
 
         foreach (Transform child in contentItems)
         {
