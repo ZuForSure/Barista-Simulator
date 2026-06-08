@@ -3,9 +3,8 @@ using System.Collections.Generic;
 [System.Serializable]
 public class BillData
 {
-    public string shopName;
     public string time;
-    public List<BillItemData> items;
+    public List<BillItemData> items = new();
     public int total;
 }
 

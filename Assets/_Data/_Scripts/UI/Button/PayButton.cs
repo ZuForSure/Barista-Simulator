@@ -16,11 +16,10 @@ public class PayButton : BaseButton
     {
         var items = ListOrdersManager.Instance.GetItems();
 
-        BillData data = new BillData();
-        data.shopName = "MATCHA STORE";
-        data.time = System.DateTime.Now.ToString("HH:mm dd/MM/yyyy");
-
-        //Debug.Log("===== BILL =====");
+        BillData data = new()
+        {
+            time = System.DateTime.Now.ToString("HH:mm dd/MM/yyyy")
+        };
 
         foreach (var kvp in items)
         {
@@ -28,25 +27,19 @@ public class PayButton : BaseButton
             var ui = kvp.Value;
 
             int quantity = ui.GetQuantity();
-            float price = recipe.price * quantity;
+            _ = recipe.price * quantity;
 
             data.items.Add(new BillItemData
             {
-                itemName = recipe.name,
+                itemName = recipe.recipeName,
                 quantity = quantity,
                 price = (int)recipe.price
             });
-
-            Debug.Log($"{recipe.name} x{quantity} = {price}.000 VND");
         }
 
         data.total = (int)ListOrdersManager.Instance.GetTotal();
 
-        // Spawn UI bill
         var billGO = Instantiate(billPrefab, billParent);
         billGO.GetComponent<BillUI>().Setup(data);
-
-        //Debug.Log($"TOTAL: {ListOrdersManager.Instance.GetTotal()} .000 VND");
-        //Debug.Log("================");
     }
 }
