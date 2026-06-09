@@ -16,8 +16,11 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private TextMeshProUGUI stepItemText;
     [SerializeField] private List<GameObject> newPrefabs;
 
-    [Header("Computer UI")]
+    [Header("Obj Interact UI")]
     [SerializeField] private GameObject computerPanel;
+    [SerializeField] private GameObject billPanel;
+
+    private BillData lastBillData;
 
     private IngredientContainer currentContainer;
 
@@ -120,11 +123,44 @@ public class UIManager : Singleton<UIManager>
         contentParent.gameObject.SetActive(false);
     }
 
-    // ================= COMPUTER =================
-    public void ShowComputerUI()
+    public void OpenUI(UIType type)
     {
-        computerPanel.SetActive(true);
-        RegisterOpenUI(computerPanel);
+        GameObject target = null;
+
+        switch (type)
+        {
+            case UIType.Computer:
+                target = computerPanel;
+                break;
+
+            case UIType.Bill:
+                target = billPanel;
+                break;
+        }
+
+        if (target == null) return;
+
+        target.SetActive(true);
+        RegisterOpenUI(target);
+
+        if (type == UIType.Bill)
+        {
+            var data = GetLastBill();
+            if (data != null)
+            {
+                target.GetComponent<BillUI>().Setup(data);
+            }
+        }
+    }
+
+    public void SetLastBill(BillData data)
+    {
+        lastBillData = data;
+    }
+
+    public BillData GetLastBill()
+    {
+        return lastBillData;
     }
 
     // ================= PLAYER =================
@@ -146,8 +182,6 @@ public class UIManager : Singleton<UIManager>
         GameEvents.UIevents.OnHideGuideUI += HideGuideUI;
         GameEvents.UIevents.OnShowContainerUI += ShowContainerUI;
         GameEvents.UIevents.OnHideContainerUI += HideContainerUI;
-
-        GameEvents.UIevents.OnOpenComputerUI += ShowComputerUI;
     }
 
     private void OnDisable()
@@ -160,7 +194,5 @@ public class UIManager : Singleton<UIManager>
         GameEvents.UIevents.OnHideGuideUI -= HideGuideUI;
         GameEvents.UIevents.OnShowContainerUI -= ShowContainerUI;
         GameEvents.UIevents.OnHideContainerUI -= HideContainerUI;
-
-        GameEvents.UIevents.OnOpenComputerUI -= ShowComputerUI;
     }
 }

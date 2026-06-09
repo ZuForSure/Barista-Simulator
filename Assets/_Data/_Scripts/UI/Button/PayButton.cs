@@ -41,8 +41,10 @@ public class PayButton : BaseButton
         }
 
         data.total = (int)ListOrdersManager.Instance.GetTotal();
+        UIManager.Instance.SetLastBill(data);
+        Debug.Log("Printing Bill...");
 
-        var billGO = Instantiate(billPrefab, billParent);
-        billGO.GetComponent<BillUI>().Setup(data);
+        //var billGO = Instantiate(billPrefab, billParent);
+        //billGO.GetComponent<BillUI>().Setup(data);
     }
 }

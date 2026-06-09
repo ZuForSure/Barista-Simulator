@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3271120189429425518}
   - component: {fileID: 8747648796042144230}
+  - component: {fileID: 6273209718065594598}
   m_Layer: 0
   m_Name: Printer
   m_TagString: Untagged
@@ -54,6 +55,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7689937, y: 0.648152, z: 0.8957654}
   m_Center: {x: -0.030988663, y: 0.33196217, z: -0.009859979}
+--- !u!114 &6273209718065594598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871695056069411563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6252f00e03c15e841827fca19792743f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactText: 'Printer: Left click to check bill'
+  uiType: 1
 --- !u!1001 &2916270301518993125
 PrefabInstance:
   m_ObjectHideFlags: 0

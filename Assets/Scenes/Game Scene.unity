@@ -998,6 +998,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5aea22a45d35674d8c7940217b0fbc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1975586976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1434469639615591356, guid: a70d61d1367f10e46b0a2c3d41d8f344, type: 3}
+  m_PrefabInstance: {fileID: 5350966112314010342}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2139451181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8855387861700272493, guid: 2d94813b465ad344886e9f8121dc9e01, type: 3}
@@ -7624,6 +7629,7 @@ MonoBehaviour:
   stepItemText: {fileID: 1914358110141598250, guid: 3ae86009030cac1438eaf2ba444a8c8a, type: 3}
   newPrefabs: []
   computerPanel: {fileID: 3268135277502850950}
+  billPanel: {fileID: 1975586976}
 --- !u!224 &9066148881938799462
 RectTransform:
   m_ObjectHideFlags: 0

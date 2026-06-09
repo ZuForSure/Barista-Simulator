@@ -23,9 +23,6 @@ public static class GameEvents
         public static Action<int, string> OnUpdateStepContainerUI;
         public static Action<string> OnAddStepContainerUI;
         public static Action OnResetContainerUI;
-
-        //Computer
-        public static Action OnOpenComputerUI;
     }
 
     //================== GAMEPLAY ====================
