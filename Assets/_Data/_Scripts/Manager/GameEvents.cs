@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 public static class GameEvents
 {
@@ -25,7 +26,6 @@ public static class GameEvents
 
         //Computer
         public static Action OnOpenComputerUI;
-        public static Action OnCloseComputerUI;
     }
 
     //================== GAMEPLAY ====================

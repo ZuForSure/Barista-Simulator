@@ -3,12 +3,15 @@ using UnityEngine;
 public class PayButton : BaseButton
 {
     [SerializeField] private GameObject billPrefab;
+    [SerializeField] private GameObject computerUI;
     [SerializeField] private Transform billParent;
 
     protected override void HandleClick()
     {
+        UIManager.Instance.RegisterCloseUI(computerUI);
+        computerUI.SetActive(false);
+
         PrintBill();
-        GameEvents.UIevents.OnCloseComputerUI?.Invoke();
         ListOrdersManager.Instance.ClearAllItems();
     }
 

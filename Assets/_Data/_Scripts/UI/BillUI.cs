@@ -11,14 +11,20 @@ public class BillUI : MonoBehaviour
     [Header("Prefab")]
     [SerializeField] private GameObject itemPrefab;
 
+    private void OnEnable()
+    {
+        UIManager.Instance.RegisterOpenUI(gameObject);
+    }
+
+    private void OnDisable()
+    {
+        UIManager.Instance.RegisterCloseUI(gameObject);
+    }
+
     public void Setup(BillData data)
     {
         txtTime.text = data.time;
         int total = 0;
-        //foreach (Transform child in contentItems)
-        //{
-        //    Destroy(child.gameObject);
-        //}
 
         foreach (var item in data.items)
         {

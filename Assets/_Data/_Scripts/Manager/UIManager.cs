@@ -21,12 +21,38 @@ public class UIManager : Singleton<UIManager>
 
     private IngredientContainer currentContainer;
 
+    private HashSet<GameObject> openedUIs = new HashSet<GameObject>();
+
     protected override void Awake()
     { 
         base.Awake();
         HideGuideUI();
     }
 
+    // ================= UI CONTROL =================
+    public void RegisterOpenUI(GameObject ui)
+    {
+        if (openedUIs.Add(ui))
+        {
+            Debug.Log("Open UI: " + ui.name);
+            SetPlayerControl(false);
+        }
+    }
+
+    public void RegisterCloseUI(GameObject ui)
+    {
+        if (openedUIs.Remove(ui))
+        {
+            Debug.Log("Close UI: " + ui.name);
+        }
+
+        if (openedUIs.Count == 0)
+        {
+            SetPlayerControl(true);
+        }
+    }
+
+    // ================= GUIDE =================
     public void ShowGuideUI(string message)
     {
         panel.SetActive(true);
@@ -38,10 +64,10 @@ public class UIManager : Singleton<UIManager>
         panel.SetActive(false);
     }
 
+    // ================= CUP =================
     public void UpdateCupUI(int index, string message)
     {
         if (index < 0 || index >= newPrefabs.Count) return;
-
         newPrefabs[index].GetComponent<TextMeshProUGUI>().text = message;
     }
 
@@ -94,18 +120,14 @@ public class UIManager : Singleton<UIManager>
         contentParent.gameObject.SetActive(false);
     }
 
+    // ================= COMPUTER =================
     public void ShowComputerUI()
     {
         computerPanel.SetActive(true);
-        SetPlayerControl(false);
+        RegisterOpenUI(computerPanel);
     }
 
-    public void HideComputerUI()
-    {
-        computerPanel.SetActive(false);
-        SetPlayerControl(true);
-    }
-
+    // ================= PLAYER =================
     private void SetPlayerControl(bool canControl)
     {
         playerController.CanControl = canControl;
@@ -126,7 +148,6 @@ public class UIManager : Singleton<UIManager>
         GameEvents.UIevents.OnHideContainerUI += HideContainerUI;
 
         GameEvents.UIevents.OnOpenComputerUI += ShowComputerUI;
-        GameEvents.UIevents.OnCloseComputerUI += HideComputerUI;
     }
 
     private void OnDisable()
@@ -141,6 +162,5 @@ public class UIManager : Singleton<UIManager>
         GameEvents.UIevents.OnHideContainerUI -= HideContainerUI;
 
         GameEvents.UIevents.OnOpenComputerUI -= ShowComputerUI;
-        GameEvents.UIevents.OnCloseComputerUI -= HideComputerUI;
     }
 }

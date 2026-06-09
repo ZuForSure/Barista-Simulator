@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 2023942310071146309}
   - component: {fileID: 6842347463940325258}
   - component: {fileID: 1020847578119237449}
-  - component: {fileID: 6207788466703893145}
+  - component: {fileID: 4072159664423172410}
   m_Layer: 5
   m_Name: Quit Btn
   m_TagString: Untagged
@@ -268,7 +268,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6207788466703893145
+--- !u!114 &4072159664423172410
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,10 +277,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 681759132008286994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 716babdf20c57f44295b78af41f7fe6d, type: 3}
+  m_Script: {fileID: 11500000, guid: f5eef486c6dc75b428693355e5885ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1020847578119237449}
+  targetUI: {fileID: 1434469639615591356}
 --- !u!1 &1301456251773736445
 GameObject:
   m_ObjectHideFlags: 0
