@@ -8,14 +8,18 @@ public class PayButton : BaseButton
 
     protected override void HandleClick()
     {
-        UIManager.Instance.RegisterCloseUI(computerUI);
-        computerUI.SetActive(false);
 
-        PrintBill();
+        var data = BuildBillData();
+        GameEvents.GameplayEvents.OnPay?.Invoke(data);
+
+        //UIManager.Instance.RegisterCloseUI(computerUI);
+        //computerUI.SetActive(false);
+        //PrintBill();
+
         ListOrdersManager.Instance.ClearAllItems();
     }
 
-    private void PrintBill()
+    private BillData BuildBillData()
     {
         var items = ListOrdersManager.Instance.GetItems();
 
@@ -30,7 +34,6 @@ public class PayButton : BaseButton
             var ui = kvp.Value;
 
             int quantity = ui.GetQuantity();
-            _ = recipe.price * quantity;
 
             data.items.Add(new BillItemData
             {
@@ -41,11 +44,38 @@ public class PayButton : BaseButton
         }
 
         data.total = (int)ListOrdersManager.Instance.GetTotal();
-        UIManager.Instance.SetLastBill(data);
 
-        GameEvents.GameplayEvents.OnPrintBill?.Invoke();
-
-        //var billGO = Instantiate(billPrefab, billParent);
-        //billGO.GetComponent<BillUI>().Setup(data);
+        return data;
     }
+
+    //private void PrintBill()
+    //{
+    //    var items = ListOrdersManager.Instance.GetItems();
+
+    //    BillData data = new()
+    //    {
+    //        time = System.DateTime.Now.ToString("HH:mm dd/MM/yyyy")
+    //    };
+
+    //    foreach (var kvp in items)
+    //    {
+    //        var recipe = kvp.Key;
+    //        var ui = kvp.Value;
+
+    //        int quantity = ui.GetQuantity();
+    //        _ = recipe.price * quantity;
+
+    //        data.items.Add(new BillItemData
+    //        {
+    //            itemName = recipe.recipeName,
+    //            quantity = quantity,
+    //            price = (int)recipe.price
+    //        });
+    //    }
+
+    //    data.total = (int)ListOrdersManager.Instance.GetTotal();
+    //    UIManager.Instance.SetLastBill(data);
+
+    //    GameEvents.GameplayEvents.OnPrintBill?.Invoke();
+    //}
 }

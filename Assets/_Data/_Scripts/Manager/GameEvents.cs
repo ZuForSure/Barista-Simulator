@@ -30,6 +30,7 @@ public static class GameEvents
     {
         public static Action<HoldAbleIngredient> OnHoldIngredient;
         public static Action OnDropItem;
+        public static Action<BillData> OnPay;
         public static Action OnPrintBill;
     }
 }
