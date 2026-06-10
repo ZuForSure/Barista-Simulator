@@ -177,6 +177,7 @@ public class UIManager : Singleton<UIManager>
         Cursor.visible = !canControl;
     }
 
+    // ================= EVENTS =================
     private void OnEnable()
     {
         GameEvents.UIevents.OnUpdateStepContainerUI += UpdateCupUI;
