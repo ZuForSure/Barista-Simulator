@@ -19,5 +19,6 @@ public class OpenUIInteract : MonoBehaviour, IInteract
 public enum UIType
 {
     Computer,
-    Bill
+    Bill,
+    CashDrawer
 }

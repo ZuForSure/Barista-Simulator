@@ -19,6 +19,7 @@ public class UIManager : Singleton<UIManager>
     [Header("Obj Interact UI")]
     [SerializeField] private GameObject computerPanel;
     [SerializeField] private GameObject billPanel;
+    [SerializeField] private GameObject cashDrawerPanel;
 
     private BillData lastBillData;
 
@@ -135,6 +136,10 @@ public class UIManager : Singleton<UIManager>
 
             case UIType.Bill:
                 target = billPanel;
+                break;
+
+            case UIType.CashDrawer:
+                target = cashDrawerPanel;
                 break;
         }
 

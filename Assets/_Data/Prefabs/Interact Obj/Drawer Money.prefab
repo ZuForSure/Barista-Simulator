@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1950391944436698944}
   - component: {fileID: 7756478116217755092}
+  - component: {fileID: 3836444751526330608}
   m_Layer: 0
   m_Name: Drawer Money
   m_TagString: Untagged
@@ -54,6 +55,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7551279, y: 0.21591479, z: 0.79470325}
   m_Center: {x: -0.0061836243, y: 0.115015715, z: -0.035865128}
+--- !u!114 &3836444751526330608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5020484639155547557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6252f00e03c15e841827fca19792743f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactText: "K\xE9t: click \u0111\u1EC3 m\u1EDF"
+  uiType: 2
 --- !u!1001 &7062908181393987152
 PrefabInstance:
   m_ObjectHideFlags: 0
