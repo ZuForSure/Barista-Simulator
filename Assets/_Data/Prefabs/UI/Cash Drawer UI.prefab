@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9207362047375887876
 RectTransform:
   m_ObjectHideFlags: 0
@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 6606757003455917131}
   - component: {fileID: 6127489796978885910}
   - component: {fileID: 5555531338372364685}
+  - component: {fileID: 308026119516244664}
   m_Layer: 5
   m_Name: Money Btn (3)
   m_TagString: Untagged
@@ -114,10 +115,10 @@ RectTransform:
   - {fileID: 2716863586742802531}
   m_Father: {fileID: 6921000422710243950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 925, y: -207.5}
+  m_SizeDelta: {x: 250, y: 380}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6606757003455917131
 CanvasRenderer:
@@ -201,6 +202,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &308026119516244664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075488820022955518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1602ff81940077c4c8d65cbe7900293e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 5555531338372364685}
+  amount: 50
+  cashSystem: {fileID: 0}
 --- !u!1 &1359319945395823000
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +229,7 @@ GameObject:
   - component: {fileID: 5013470151421080193}
   - component: {fileID: 6175746593031591783}
   - component: {fileID: 1356662514764940223}
+  - component: {fileID: 5758597502850257542}
   m_Layer: 5
   m_Name: Money Btn
   m_TagString: Untagged
@@ -235,10 +252,10 @@ RectTransform:
   - {fileID: 7497817205020022080}
   m_Father: {fileID: 6921000422710243950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 145, y: -207.5}
+  m_SizeDelta: {x: 250, y: 380}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5013470151421080193
 CanvasRenderer:
@@ -322,6 +339,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5758597502850257542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359319945395823000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1602ff81940077c4c8d65cbe7900293e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1356662514764940223}
+  amount: 500
+  cashSystem: {fileID: 0}
 --- !u!1 &2074254240569640698
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +366,7 @@ GameObject:
   - component: {fileID: 8840522425611679351}
   - component: {fileID: 5660215927823324959}
   - component: {fileID: 3855930948125792973}
+  - component: {fileID: 7451759668374468054}
   m_Layer: 5
   m_Name: Money Btn (4)
   m_TagString: Untagged
@@ -356,10 +389,10 @@ RectTransform:
   - {fileID: 7272589546511121547}
   m_Father: {fileID: 6921000422710243950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1185, y: -207.5}
+  m_SizeDelta: {x: 250, y: 380}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8840522425611679351
 CanvasRenderer:
@@ -443,6 +476,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7451759668374468054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074254240569640698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1602ff81940077c4c8d65cbe7900293e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 3855930948125792973}
+  amount: 20
+  cashSystem: {fileID: 0}
 --- !u!1 &2099881533089341491
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +879,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6203055717242267830}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CashInputSystem, Assembly-CSharp
+        m_MethodName: ResetMoney
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3337322972588668277
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,6 +1038,7 @@ GameObject:
   - component: {fileID: 1779676292556514905}
   - component: {fileID: 4986000522266641285}
   - component: {fileID: 6220514730118525069}
+  - component: {fileID: 7302153351237437718}
   m_Layer: 5
   m_Name: Money Btn (1)
   m_TagString: Untagged
@@ -1000,10 +1061,10 @@ RectTransform:
   - {fileID: 5735722127748557124}
   m_Father: {fileID: 6921000422710243950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 405, y: -207.5}
+  m_SizeDelta: {x: 250, y: 380}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1779676292556514905
 CanvasRenderer:
@@ -1087,6 +1148,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7302153351237437718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681347607747486628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1602ff81940077c4c8d65cbe7900293e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 6220514730118525069}
+  amount: 200
+  cashSystem: {fileID: 0}
 --- !u!1 &3719554651078049634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,6 +1443,7 @@ GameObject:
   - component: {fileID: 2352430232802859491}
   - component: {fileID: 2067734361798903074}
   - component: {fileID: 5826276112041990456}
+  - component: {fileID: 5177628035483740173}
   m_Layer: 5
   m_Name: Money Btn (5)
   m_TagString: Untagged
@@ -1389,10 +1466,10 @@ RectTransform:
   - {fileID: 4175611491220659224}
   m_Father: {fileID: 6921000422710243950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 145, y: -592.5}
+  m_SizeDelta: {x: 250, y: 380}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2352430232802859491
 CanvasRenderer:
@@ -1476,6 +1553,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5177628035483740173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4136419344099166579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1602ff81940077c4c8d65cbe7900293e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 5826276112041990456}
+  amount: 10
+  cashSystem: {fileID: 0}
 --- !u!1 &4149490779633043389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1714,7 @@ GameObject:
   - component: {fileID: 8677079527414087722}
   - component: {fileID: 7188488987582073052}
   - component: {fileID: 4685965615953029500}
+  - component: {fileID: 478039862906309281}
   m_Layer: 5
   m_Name: Money Btn (7)
   m_TagString: Untagged
@@ -1644,10 +1737,10 @@ RectTransform:
   - {fileID: 8124973402223066095}
   m_Father: {fileID: 6921000422710243950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 665, y: -592.5}
+  m_SizeDelta: {x: 250, y: 380}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8677079527414087722
 CanvasRenderer:
@@ -1731,6 +1824,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &478039862906309281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354045547031896750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1602ff81940077c4c8d65cbe7900293e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 4685965615953029500}
+  amount: 2
+  cashSystem: {fileID: 0}
 --- !u!1 &4644431457767456016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1877,6 +1985,7 @@ GameObject:
   - component: {fileID: 445763806462608276}
   - component: {fileID: 6335760231526045471}
   - component: {fileID: 5017663270033099691}
+  - component: {fileID: 6653967488852454875}
   m_Layer: 5
   m_Name: Money Btn (8)
   m_TagString: Untagged
@@ -1899,10 +2008,10 @@ RectTransform:
   - {fileID: 6566908716906611763}
   m_Father: {fileID: 6921000422710243950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 925, y: -592.5}
+  m_SizeDelta: {x: 250, y: 380}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &445763806462608276
 CanvasRenderer:
@@ -1986,6 +2095,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6653967488852454875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775198666858837638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1602ff81940077c4c8d65cbe7900293e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 5017663270033099691}
+  amount: 1
+  cashSystem: {fileID: 0}
 --- !u!1 &4870125877304024076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2416,6 +2540,7 @@ GameObject:
   - component: {fileID: 8654150923845455374}
   - component: {fileID: 7195724241215002217}
   - component: {fileID: 1632177290524858749}
+  - component: {fileID: 3630730529338295793}
   m_Layer: 5
   m_Name: Money Btn (6)
   m_TagString: Untagged
@@ -2438,10 +2563,10 @@ RectTransform:
   - {fileID: 5868467995929116078}
   m_Father: {fileID: 6921000422710243950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 405, y: -592.5}
+  m_SizeDelta: {x: 250, y: 380}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8654150923845455374
 CanvasRenderer:
@@ -2525,6 +2650,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3630730529338295793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8204439411572837857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1602ff81940077c4c8d65cbe7900293e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1632177290524858749}
+  amount: 5
+  cashSystem: {fileID: 0}
 --- !u!1 &8225852928943355933
 GameObject:
   m_ObjectHideFlags: 0
@@ -3183,7 +3323,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8456110380047110981}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CashInputSystem, Assembly-CSharp
+        m_MethodName: ConfirmCash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8931654330552884106
 GameObject:
   m_ObjectHideFlags: 0
@@ -3265,6 +3417,7 @@ GameObject:
   - component: {fileID: 6313914681489563387}
   - component: {fileID: 2661266252256377878}
   - component: {fileID: 6481328255226230966}
+  - component: {fileID: 5273903718401086399}
   m_Layer: 5
   m_Name: Money Btn (2)
   m_TagString: Untagged
@@ -3287,10 +3440,10 @@ RectTransform:
   - {fileID: 4757237166917167745}
   m_Father: {fileID: 6921000422710243950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 665, y: -207.5}
+  m_SizeDelta: {x: 250, y: 380}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6313914681489563387
 CanvasRenderer:
@@ -3374,3 +3527,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5273903718401086399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8996613146110203963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1602ff81940077c4c8d65cbe7900293e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 6481328255226230966}
+  amount: 100
+  cashSystem: {fileID: 0}

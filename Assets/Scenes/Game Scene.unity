@@ -727,6 +727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1813892935}
   - component: {fileID: 1813892936}
+  - component: {fileID: 1813892937}
   m_Layer: 0
   m_Name: System Manager
   m_TagString: Untagged
@@ -762,6 +763,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   computerUI: {fileID: 2644631101983471219}
+--- !u!114 &1813892937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813892934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 203f5a6129ab9c441b7d50098f434cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtTotal: {fileID: 2933547102222618478}
 --- !u!4 &1871499406 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5193252629753182166, guid: ba42c26005df9264e817768e994a273b, type: 3}
@@ -2339,6 +2353,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7610806770661396757}
     m_Modifications:
+    - target: {fileID: 308026119516244664, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: cashSystem
+      value: 
+      objectReference: {fileID: 1813892937}
+    - target: {fileID: 478039862906309281, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: cashSystem
+      value: 
+      objectReference: {fileID: 1813892937}
     - target: {fileID: 529428147729702353, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
       propertyPath: m_Name
       value: Cash Drawer UI
@@ -2370,6 +2392,34 @@ PrefabInstance:
     - target: {fileID: 548117299532183879, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -592.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041876552214202921, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041876552214202921, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041876552214202921, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1813892937}
+    - target: {fileID: 1041876552214202921, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041876552214202921, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetMoney
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041876552214202921, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CashInputSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041876552214202921, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1153627526920424147, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2535,6 +2585,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3630730529338295793, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: cashSystem
+      value: 
+      objectReference: {fileID: 1813892937}
+    - target: {fileID: 4254345999192340794, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254345999192340794, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254345999192340794, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1813892937}
+    - target: {fileID: 4254345999192340794, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254345999192340794, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ConfirmCash
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254345999192340794, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CashInputSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254345999192340794, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4603852994027410546, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2603,6 +2685,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -207.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5177628035483740173, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: cashSystem
+      value: 
+      objectReference: {fileID: 1813892937}
+    - target: {fileID: 5273903718401086399, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: cashSystem
+      value: 
+      objectReference: {fileID: 1813892937}
     - target: {fileID: 5298314670572806105, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2675,6 +2765,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -207.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5758597502850257542, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: cashSystem
+      value: 
+      objectReference: {fileID: 1813892937}
+    - target: {fileID: 6653967488852454875, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: cashSystem
+      value: 
+      objectReference: {fileID: 1813892937}
     - target: {fileID: 7281971749041200066, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2699,6 +2797,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7302153351237437718, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: cashSystem
+      value: 
+      objectReference: {fileID: 1813892937}
     - target: {fileID: 7445175153494509533, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2723,6 +2825,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7451759668374468054, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+      propertyPath: cashSystem
+      value: 
+      objectReference: {fileID: 1813892937}
     - target: {fileID: 8245398032323296746, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2885,6 +2991,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 529428147729702353, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
   m_PrefabInstance: {fileID: 2933547102222618476}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2933547102222618478 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4919050884968811534, guid: e8b567e593a33d3418b5e4a6789d5922, type: 3}
+  m_PrefabInstance: {fileID: 2933547102222618476}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2961498165018500512 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8772002122917188540, guid: 054460db575a9184880008530a13e66b, type: 3}
