@@ -12,10 +12,6 @@ public class PayButton : BaseButton
         var data = BuildBillData();
         GameEvents.GameplayEvents.OnPay?.Invoke(data);
 
-        //UIManager.Instance.RegisterCloseUI(computerUI);
-        //computerUI.SetActive(false);
-        //PrintBill();
-
         ListOrdersManager.Instance.ClearAllItems();
     }
 
@@ -47,35 +43,4 @@ public class PayButton : BaseButton
 
         return data;
     }
-
-    //private void PrintBill()
-    //{
-    //    var items = ListOrdersManager.Instance.GetItems();
-
-    //    BillData data = new()
-    //    {
-    //        time = System.DateTime.Now.ToString("HH:mm dd/MM/yyyy")
-    //    };
-
-    //    foreach (var kvp in items)
-    //    {
-    //        var recipe = kvp.Key;
-    //        var ui = kvp.Value;
-
-    //        int quantity = ui.GetQuantity();
-    //        _ = recipe.price * quantity;
-
-    //        data.items.Add(new BillItemData
-    //        {
-    //            itemName = recipe.recipeName,
-    //            quantity = quantity,
-    //            price = (int)recipe.price
-    //        });
-    //    }
-
-    //    data.total = (int)ListOrdersManager.Instance.GetTotal();
-    //    UIManager.Instance.SetLastBill(data);
-
-    //    GameEvents.GameplayEvents.OnPrintBill?.Invoke();
-    //}
 }
