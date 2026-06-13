@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class ItemHolder : Singleton<ItemHolder>
@@ -38,15 +37,27 @@ public class ItemHolder : Singleton<ItemHolder>
     {
         if (currentItem == null) return;
 
-        if (hit.collider.TryGetComponent<IDropZone>(out var dropZone))
+        if (hit.collider.TryGetComponent<DropZone>(out var dz))
         {
-            if (dropZone is DropZone dz && dz.IsOccupied())
+            //if (dropZone is DropZone dz && dz.IsOccupied())
+            //{
+            //    Debug.Log("This place already has an item");
+            //    return;
+            //}
+
+            if (dz.IsOccupied())
             {
                 Debug.Log("This place already has an item");
                 return;
             }
 
-            dropZone.PlaceItem(currentItem);
+            if (currentItem.placeableType != dz.AllowType)
+            {
+                Debug.Log("Wrong placement!");
+                return;
+            }
+
+            dz.PlaceItem(currentItem);
             currentItem = null;
             GameEvents.GameplayEvents.OnDropItem?.Invoke();
         }

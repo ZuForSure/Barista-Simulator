@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class DropZone : MonoBehaviour,IDropZone, IInteract
 {
+    [SerializeField] private PlaceableType allowType;
+    [SerializeField] private bool lockAfterPlace = true;
     [SerializeField] private Transform placePoint;
     [SerializeField] private Item currentItem;
+    public PlaceableType AllowType => allowType;
 
     public string GetInteractText()
     {
@@ -27,6 +30,13 @@ public class DropZone : MonoBehaviour,IDropZone, IInteract
     public void PlaceItem(Item item)
     {
         if (currentItem != null) return;
+
+        if (item.placeableType != allowType)
+        {
+            Debug.Log("Wrong placeable type!");
+            return;
+        }
+
         currentItem = item;
 
         item.transform.SetParent(null);
@@ -42,6 +52,11 @@ public class DropZone : MonoBehaviour,IDropZone, IInteract
         if (item.TryGetComponent<Collider>(out var col))
         {
             col.enabled = true;
+        }
+
+        if (lockAfterPlace)
+        {
+            item.LockItem();
         }
     }
 

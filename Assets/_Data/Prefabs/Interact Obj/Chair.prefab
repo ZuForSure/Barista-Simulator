@@ -96,7 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
+  placeableType: 2
   currentZone: {fileID: 0}
+  interactText: Left Click to pick up
 --- !u!1001 &517882936701036085
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,15 +6,25 @@ public enum ItemType
     Ingredient = 2,
 }
 
+public enum PlaceableType
+{
+    None = 0,
+    Table = 1,
+    Chair = 2,
+}
+
 public class Item : MonoBehaviour,IInteract
 {
     [Header("Item")]
     public ItemType itemType;
+    public PlaceableType placeableType;
+    private bool isLocked = false;
     [SerializeField] private DropZone currentZone;
     [SerializeField] protected string interactText = "Left Click to pick up";
 
     public virtual string GetInteractText()
     {
+        if (isLocked) return "";
         return interactText;
     }
 
@@ -23,8 +33,19 @@ public class Item : MonoBehaviour,IInteract
         this.PickUpItem();
     }
 
+    public void LockItem()
+    {
+        isLocked = true;
+    }
+
     public virtual void PickUpItem()
     {
+        if (isLocked)
+        {
+            Debug.Log("Item is locked, cannot pick up!");
+            return;
+        }
+
         if (currentZone != null)
         {
             currentZone.RemoveItem();
